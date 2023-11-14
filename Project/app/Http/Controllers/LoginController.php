@@ -49,10 +49,7 @@ class LoginController extends Controller
 
         // Redirect based on validation and SQL injection check result
         if ($isValid) {
-            return redirect('Login')->with([
-                "pesansukses" => "Anda Sukses Login",
-                "tipe" => "sukses"
-            ]);
+            return redirect('Home');
         } else {
             return redirect('Login')->with([
                 "pesansukses" => "Gagal Login. Salah Password",

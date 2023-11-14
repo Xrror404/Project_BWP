@@ -7,11 +7,9 @@ use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        // Fetch announcements from the database
         $announcements = DB::table('pengumuman')->get();
-
         return view('home', compact('announcements'));
     }
 }
