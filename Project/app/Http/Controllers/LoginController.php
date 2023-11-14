@@ -35,13 +35,13 @@ class LoginController extends Controller
 
         $daftarMhs = DB::connection("KoneksiDatabase")
             ->table("mahasiswa")
-            ->where('nama_mhs', $Username)
+            ->where('nrp_mhs', $Username)
             ->where('password_mhs', $Password)
             ->get();
 
         // Check if the provided credentials are valid (without hashing the password)
         foreach ($daftarMhs as $Mahasiswa) {
-            if ($Mahasiswa->nama_mhs === $Username && $Mahasiswa->password_mhs === $Password) {
+            if ($Mahasiswa->nrp_mhs === $Username && $Mahasiswa->password_mhs === $Password) {
                 $isValid = true;
                 break;
             }
@@ -49,7 +49,10 @@ class LoginController extends Controller
 
         // Redirect based on validation and SQL injection check result
         if ($isValid) {
-            return redirect('home');
+            return redirect('Login')->with([
+                "pesansukses" => "Anda Sukses Login",
+                "tipe" => "sukses"
+            ]);
         } else {
             return redirect('Login')->with([
                 "pesansukses" => "Gagal Login. Salah Password",
