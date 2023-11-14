@@ -26,6 +26,16 @@ CREATE TABLE mahasiswa (
     PRIMARY KEY (nrp_mhs)
 );
 
+CREATE TABLE poin_mhs (
+    id INT(2) PRIMARY KEY,
+    nrp_mahasiswa VARCHAR(9),
+    poin_minatbakat INT(4),
+    poin_penalaran INT(4),
+    poin_organisasi INT(4),
+    poin_kerohanian INT(4),
+    FOREIGN KEY (nrp_mahasiswa) REFERENCES mahasiswa(nrp_mhs)
+);
+
 CREATE TABLE pengumuman (
     id_pengumuman INT(10),
     judul_pengumuman VARCHAR(50),
@@ -83,6 +93,14 @@ VALUES
     ('223172098', 'Dahren Ericsson', 2023, "ligmaballs", 17, 3.85),
     ('221180185', 'Ivan Santoso', 2021, "dunstanganteng69", 18, 3.78);
 
+INSERT INTO poin_mhs (id, nrp_mahasiswa, poin_minatbakat, poin_penalaran, poin_organisasi, poin_kerohanian)
+VALUES
+    (1, '222117045', 400, 350, 100, 175),
+    (2, '222117047', 550, 325, 175, 75),
+    (3, '222117039', 450, 300, 150, 100),
+    (4, '222117068', 450, 400, 300, 175),
+    (5, '223172098', 400, 400, 200, 150),
+    (6, '221180185', 500, 1025, 200, 125);
 
 INSERT INTO pengumuman (id_pengumuman, judul_pengumuman)
 VALUES
