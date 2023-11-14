@@ -19,6 +19,7 @@ CREATE TABLE mahasiswa (
     nrp_mhs VARCHAR(9),
     nama_mhs VARCHAR(40),
     angkatan_mhs INT(4),
+    password_mhs VARCHAR(20),
     jurusan_mhs VARCHAR(8),
     ipk_mhs FLOAT,
     FOREIGN KEY (jurusan_mhs) REFERENCES jurusan(kode_jurusan),
@@ -75,12 +76,12 @@ VALUES
 
 INSERT INTO mahasiswa (nrp_mhs, nama_mhs, angkatan_mhs, jurusan_mhs, ipk_mhs)
 VALUES
-    ('222117045', 'Michael Setiabudi', 2022, 11, 3.55),
-    ('222117047', 'Michaell Ezekial', 2022, 11, 2.98),
-    ('222117039', 'Kelun Kaka Santoso', 2022, 11, 3.15),
-    ('222117068', 'Yoga Pramana Syahputra Teguh', 2022, 11, 3.61),
-    ('223172098', 'Dahren Ericsson', 2023, 17, 3.85),
-    ('221180185', 'Ivan Santoso', 2021, 18, 3.78);
+    ('222117045', 'Michael Setiabudi', 2022, "setiabudi123", 11, 3.55),
+    ('222117047', 'Michaell Ezekial', 2022, "meme69420", 11, 2.98),
+    ('222117039', 'Kelun Kaka Santoso', 2022, "mrkeyun",11, 3.15),
+    ('222117068', 'Yoga Pramana Syahputra Teguh', 2022, "69420666", 11, 3.61),
+    ('223172098', 'Dahren Ericsson', 2023, "ligmaballs", 17, 3.85),
+    ('221180185', 'Ivan Santoso', 2021, "dunstanganteng69", 18, 3.78);
 
 
 INSERT INTO pengumuman (id_pengumuman, judul_pengumuman)
