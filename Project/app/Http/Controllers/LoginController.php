@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
 {
@@ -10,20 +11,25 @@ class LoginController extends Controller
         return view('Login');
     }
     public function AreUserExist(Request $request){
-        //ini udah selesai untuk nangkep nya cuman tinggal ditambahi ae database nya
 
-        $username = $request->input('Username');
-        $password = $request->input('password');
-        $isValid=true;
+        $daftarMhs=DB::connection("KoneksiDatabase")->table("mahasiswa")->get();
 
+        $Username = $request->input('Username');
+        $Password = $request->input('password');
+        $isValid=false;
+        foreach ($daftarMhs as $Mahasiswa) {
+            if ($Mahasiswa->nama_mhs === $Username) {
+                if ($Mahasiswa->nama_mhs === $Username) {
+                    $isValid = true;
+                }
+            }
+        }
         if ($isValid) {
-            // Successful login
             return redirect('Login')->with([
-                "pesansukses" => "Berhasil Login $username dengan password $password",
+                "pesansukses" => "Berhasil Login $Username dengan password $Password",
                 "tipe" => "sukses"
             ]);
         } else {
-            // Unsuccessful login
             return redirect('Login')->with([
                 "pesansukses" => "Gagal Login. Salah Password",
                 "tipe" => "gagal"
