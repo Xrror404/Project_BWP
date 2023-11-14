@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 /*
@@ -12,12 +13,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::redirect('/', '/Login');
 Route::get('/welcome', function () {
     return view('welcome');
 });
 Route::prefix('/Login')->group(function () {
-    Route::get('/', [LoginController::class,"ToLogin"]);
+    Route::get('/', [LoginController::class, "ToLogin"]);
     Route::post('/Verification', [LoginController::class, 'AreUserExist'])->name('LoginForm');
-
 });
+Route::get('/home', [HomeController::class, 'index'])->name('home');
