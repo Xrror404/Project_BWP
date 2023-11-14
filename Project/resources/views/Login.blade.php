@@ -1,3 +1,12 @@
+@section('pesansponsor')
+    @if (Session::has('pesansukses'))
+        @if (Session::get('tipe') == 'sukses')
+            <div class="alert alert-success">{{ Session::get('pesansukses') }}</div>
+        @else
+            <div class="alert alert-danger">{{ Session::get('pesansukses') }}</div>
+        @endif
+    @endif
+@endsection
 <!doctype html>
 <html lang="en">
 
@@ -29,7 +38,14 @@
             transform: translateY(-50%);
             cursor: pointer;
             z-index: 1;
-            /* Ensure the icon is above the input field */
+        }
+
+        .logo-img {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.2);
         }
     </style>
 </head>
@@ -38,8 +54,8 @@
     <header>
         <nav class="navbar">
             <div class="container align-items-center">
-                <img class="pl-5 pt-2" style="height: 7em; width: 7em;" src="../Assets/logoistts.png" alt=""
-                    srcset="">
+                <img id="logoImg" class="pl-5 pt-2 logo-img" style="height: 7em; width: 7em;"
+                    src="../Assets/logoistts.png" alt="" srcset="">
             </div>
         </nav>
     </header>
@@ -53,7 +69,9 @@
                 <div class="col-md-6">
                     <div class="container p-2">
                         <h1>Sistem ISTTS</h1>
-                        <form action=""method="POST">
+                        @yield('pesansponsor')
+                        <form action="{{ route('LoginForm') }}"method="POST">
+                            @csrf
                             <div class="form-group pt-2">
                                 <p class="p-0"><b>Username</b></p>
                                 <input type="text" name="Username" id=""placeholder="Username"
@@ -74,7 +92,7 @@
                         <input type="checkbox" name="RememberMe" id="RememberMe"><span class="p-2">Remember Me</span>
                     </div>
                     <div class="form-group pt-2">
-                        <button type="submit"id="loginbtn" name="LoginBtn"
+                        <button type="submit" id="loginbtn" name="LoginBtn"
                             class="btn btn-info btn-rounded text-light pt-2 pb-2 pl-4 pr-4">Sign In</button>
                     </div>
                     </form>

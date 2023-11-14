@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +16,8 @@ Route::redirect('/', '/Login');
 Route::get('/welcome', function () {
     return view('welcome');
 });
-Route::get('/Login',function(){
-    return view('Login');
+Route::prefix('/Login')->group(function () {
+    Route::get('/', [LoginController::class,"ToLogin"]);
+    Route::post('/Verification', [LoginController::class, 'AreUserExist'])->name('LoginForm');
+
 });
