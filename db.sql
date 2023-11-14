@@ -84,7 +84,7 @@ VALUES
     (005, 'Yafet Jaya Kusumo'),
     (006, 'Lukman Zaman PCSW');
 
-INSERT INTO mahasiswa (nrp_mhs, nama_mhs, angkatan_mhs, jurusan_mhs, ipk_mhs)
+INSERT INTO mahasiswa (nrp_mhs, nama_mhs, angkatan_mhs, password_mhs, jurusan_mhs, ipk_mhs)
 VALUES
     ('222117045', 'Michael Setiabudi', 2022, "setiabudi123", 11, 3.55),
     ('222117047', 'Michaell Ezekial', 2022, "meme69420", 11, 2.98),
