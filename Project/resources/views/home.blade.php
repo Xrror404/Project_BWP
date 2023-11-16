@@ -1,4 +1,4 @@
-@extends('layouts.app') <!-- Assuming you have a master layout -->
+@extends('layouts.app')
 
 @section('content')
     <div class="container">
@@ -8,21 +8,23 @@
             <!-- Your logo here -->
         </header>
 
-        <!-- Sidebar -->
-        <aside>
-            <!-- User's name and nrp -->
-            <div>
-                <!-- Retrieve the user's name and nrp from the database -->
-                <p>{{ $userData->nama_mhs }}</p>
-                <p>{{ $userData->nrp_mhs }}</p>
-            </div>
-            <!-- Sidebar menu -->
-            <ul>
-                <li><a href="{{ route('home') }}">Beranda</a></li>
-                <!-- Add other sidebar options here -->
-                <!-- Poin, Akademi, Jadwal, Rencana Studi, Kontak Dosen -->
-            </ul>
-        </aside>
+        <!-- Display student data if available -->
+        @isset($studentData)
+            <!-- Sidebar -->
+            <aside>
+                <!-- User's name and nrp -->
+                <div>
+                    <p>{{ $studentData->nama_mhs }}</p>
+                    <p>{{ $studentData->nrp_mhs }}</p>
+                </div>
+                <!-- Sidebar menu -->
+                <ul>
+                    <li><a href="{{ route('home') }}">Beranda</a></li>
+                    <!-- Add other sidebar options here -->
+                    <!-- Poin, Akademi, Jadwal, Rencana Studi, Kontak Dosen -->
+                </ul>
+            </aside>
+        @endisset
 
         <!-- Announcement Card -->
         <section class="announcement-card">
