@@ -22,4 +22,4 @@ Route::prefix('/Login')->group(function () {
     Route::get('/', [LoginController::class, "ToLogin"]);
     Route::post('/Verification', [LoginController::class, 'AreUserExist'])->name('LoginForm');
 });
-Route::get('/Home', [HomeController::class, 'index'])->name('Home');
+Route::get('/Home', [HomeController::class, 'index'])->name('home');
