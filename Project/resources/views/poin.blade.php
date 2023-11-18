@@ -21,8 +21,8 @@
                 </div>
                 <!-- Sidebar menu -->
                 <ul>
-                    <li><a href="{{ route('home') }}">Beranda</a></li>
-                    <li><a href="{{ route('poin') }}">Poin</a></li>
+                    {{-- <li><a href="{{ route('home') }}">Beranda</a></li>
+                    <li><a href="{{ route('poin') }}">Poin</a></li> --}}
                     <!-- Add other sidebar options here -->
                     <!-- Poin, Akademi, Jadwal, Rencana Studi, Kontak Dosen -->
                 </ul>

@@ -9,10 +9,11 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
+        $nrp_mhs = $request->session()->get('Username');
         // Fetch student data (assuming this logic exists in your application)
-        $studentData = $this->getStudentData($request->user()->nrp_mhs); // Replace 'id' with the actual user identifier used in your system
+        $studentData = $this->getStudentData($nrp_mhs);
 
-        // Fetch announcements (assuming this logic exists in your application)
+        // Fetch announcements using Eloquent model
         $announcements = $this->getAnnouncements();
 
         return view('home', [
@@ -22,26 +23,23 @@ class HomeController extends Controller
     }
 
     // Function to get student data (replace this with your actual logic)
-    private function getStudentData($userId)
+    private function getStudentData($nrp_mhs)
     {
-        // Your logic to retrieve student data based on the user ID
-        // For example:
-        // $studentData = DB::table('students')->where('user_id', $userId)->first();
-        // return $studentData;
+        $studentData = DB::connection("KoneksiDatabase")
+            ->table("mahasiswa")
+            ->where('nrp_mhs', $nrp_mhs)
+            ->first();
 
-        // For the purpose of this example, returning null
-        return null;
+        return $studentData;
     }
 
     // Function to fetch announcements (replace this with your actual logic)
     private function getAnnouncements()
     {
-        // Your logic to fetch announcements
-        // For example:
-        // $announcements = DB::table('announcements')->get();
-        // return $announcements;
+        $announcements = DB::connection("KoneksiDatabase")
+            ->table("Pengumuman")
+            ->get();
 
-        // For the purpose of this example, returning an empty array
-        return [];
+        return $announcements;
     }
 }
