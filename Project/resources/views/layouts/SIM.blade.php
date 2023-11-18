@@ -8,7 +8,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
-        /* Style the sidebar */
+        header {
+            background-color: #360000;
+            color: white;
+            padding: 20px;
+        }
+
+        .sidebar div {
+            background-color: #360000;
+            color: white;
+            padding: 10px;
+        }
+
         .sidebar {
             width: 250px;
             height: 100%;
@@ -42,59 +53,22 @@
         }
 
         .sidebar ul li a:hover {
-            color: #007bff;
+            color: #360000;
         }
     </style>
 </head>
 
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <h1>Sistem ISTTS</h1>
-            <!-- Your logo or additional header content here -->
-        </div>
-    </header>
+    <!-- Include the content from sections -->
+    @yield('header')
 
-    <!-- Sidebar -->
     <div class="sidebar">
-        <h1 class="text-blue-700">KONTOL</h1>
-        <!-- Display student data if available -->
-        @isset($studentData)
-            <div>
-                <p>{{ $studentData->nama_mhs }}</p>
-                <p>{{ $studentData->nrp_mhs }}</p>
-            </div>
-            <ul>
-                <li><a href="{{ route('home') }}">Beranda</a></li>
-                <!-- Add other sidebar options here -->
-                <!-- Poin, Akademi, Jadwal, Rencana Studi, Kontak Dosen -->
-            </ul>
-        @endisset
+        @yield('sidebar')
     </div>
 
-    <!-- Main Content Area -->
     <div class="content">
-        <!-- Announcement Card -->
-        <section class="announcement-card">
-            <h2>Announcement</h2>
-            <div class="announcement-content">
-                @foreach ($announcements as $announcement)
-                    <div class="announcement-item">
-                        <h3>{{ $announcement->judul_pengumuman }}</h3>
-                        <!-- Display other details of the announcement -->
-                    </div>
-                @endforeach
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <!-- Your footer content -->
-        </footer>
+        @yield('content')
     </div>
-
-    <!-- Include your JavaScript files or CDN links here -->
 
     <!-- Your JavaScript code -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

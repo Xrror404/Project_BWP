@@ -36,19 +36,23 @@
     <div class="container">
         <!-- Display student data if available -->
 
-        <!-- Announcement Card -->
-        <section class="announcement-card">
-            <h2>Announcement</h2>
-            <div class="announcement-content">
-                @foreach ($announcements as $announcement)
-                    <div class="announcement-item">
-                        <h3>{{ $announcement->judul_pengumuman }}</h3>
-                        <!-- Display other details of the announcement -->
+        <!-- User Points Section -->
+        <section class="user-points-section">
+            <h2>Poin Kemahasiswaan</h2>
+            <div class="user-points-content">
+                @if ($userPoints)
+                    <div class="user-points-item">
+                        <p>Poin Minat Bakat: {{ $userPoints->poin_minatbakat }}</p>
+                        <p>Poin Penalaran: {{ $userPoints->poin_penalaran }}</p>
+                        <p>Poin Organisasi: {{ $userPoints->poin_organisasi }}</p>
+                        <p>Poin Kerohanian: {{ $userPoints->poin_kerohanian }}</p>
                     </div>
-                @endforeach
+                @endif
             </div>
         </section>
 
+
+        <!-- Footer -->
         <!-- Footer -->
         <footer style="background-color: #1E0A0A; color: white; padding: 20px;">
             <div>
