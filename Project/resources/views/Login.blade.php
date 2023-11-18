@@ -68,34 +68,36 @@
                 </div>
                 <div class="col-md-6">
                     <div class="container p-2">
-                        <h1>Sistem ISTTS</h1>
+                        <h1>Sistem Informasi Mahasiswa</h1>
                         @yield('pesansponsor')
                         <form action="{{ route('LoginForm') }}" method="POST">
                             @csrf
                             <div class="form-group pt-2">
                                 <p class="p-0"><b>Username</b></p>
-                                <input type="text" name="Username" id="" placeholder="Username" style="width:100%;height:3em;">
+                                <input type="text" name="Username" id="" placeholder="Username"
+                                    style="width:100%;height:3em;">
                             </div>
                             <div class="form-group pt-2">
                                 <p class="p-0"><b>Password</b></p>
                                 <div class="password-container">
-                                    <input type="password" id="password" name="password" style="width: calc(100% - 2.5em); height: 3em;"
-                                        placeholder="Password" required>
+                                    <input type="password" id="password" name="password"
+                                        style="width: calc(100% - 2.5em); height: 3em;" placeholder="Password" required>
                                     <span class="show-password" onclick="togglePassword()"
                                         style="position: absolute; right: 0.5em; top: 50%; transform: translateY(-50%); cursor: pointer;">👁️</span>
                                 </div>
                             </div>
                             <div class="form-group pt-2">
-                                <input type="checkbox" name="RememberMe" id="RememberMe"><span class="p-2">Remember Me</span>
+                                <input type="checkbox" name="RememberMe" id="RememberMe"><span class="p-2">Remember
+                                    Me</span>
                             </div>
                             <div class="form-group pt-2">
                                 <button type="submit" id="loginbtn" name="LoginBtn"
                                     class="btn btn-info btn-rounded text-light pt-2 pb-2 pl-4 pr-4">Sign In</button>
                             </div>
                         </form>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

@@ -4,8 +4,8 @@
     <div class="container">
         <!-- Header -->
         <header>
-            <h1>SISTEM ISTTS</h1>
-            <!-- Your logo here -->
+            <img src="../Assets/logoistts.png" alt="" style="height: 2vw; height: 2vw">
+            <h1>Sistem Informasi ISTTS</h1>
         </header>
     </div>
 @endsection
@@ -13,7 +13,6 @@
 @section('sidebar')
     @isset($studentData)
         <div class="container">
-            <!-- Sidebar -->
             <aside>
                 <!-- User's name and nrp -->
                 <div>

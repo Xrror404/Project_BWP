@@ -4,8 +4,8 @@
     <div class="container">
         <!-- Header -->
         <header>
-            <h1>SISTEM ISTTS</h1>
-            <!-- Your logo here -->
+            <img src="../Assets/logoistts.png" alt="" style="height: 2vw; height: 2vw">
+            <h1>Sistem Informasi Mahasiswa</h1>
         </header>
     </div>
 @endsection
