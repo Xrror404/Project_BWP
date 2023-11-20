@@ -33,7 +33,7 @@ CREATE TABLE matkul_diambil (
     nama_mhs VARCHAR(50),
     id_matkul_diambil INT(3),
     FOREIGN KEY (nama_mhs) REFERENCES mahasiswa(nama_mhs),
-    FOREIGN KEY (id_matkul_diambil) REFERENCES matkul(id_matkul)
+    FOREIGN KEY (id) REFERENCES matkul(id_matkul)
 );
 
 CREATE TABLE poin_mhs (
