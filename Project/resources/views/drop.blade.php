@@ -15,44 +15,23 @@
 @endsection --}}
 
 @section('content')
-    {{-- <div class="container">
-        <!-- Display student data if available -->
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Perubahan Jadwal Kuliah</h5>
-                <p class="card-text">untuk saat ini, tidak ada pengumuman Perubahan Jadwal Kuliah.</p>
-            </div>
-        </div>
-    </div> --}}
+    {{-- <div class="container"> --}}
+    <!-- Display student data if available -->
     <div class="card">
-        <div class="card-header">
-            Perubahan Jadwal Kuliah
-        </div>
         <div class="card-body">
-            <h5 class="card-title">Perubahan Jadwal Kuliah</h5>
-            <p class="card-text"></p>
-
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="card-title">Pengajuan Pembatalan Rencana Studi (Drop) Mahasiswa</h5>
+                </div>
+                <div class="col-md-6 text-right">
+                    <h6 class="card-title">-</h6>
+                    <h6 class="card-title">-</h6>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- Announcement Card -->
-    <section class="announcement-card">
-        <h2>Announcement</h2>
-        <div class="announcement-content">
-            @foreach ($announcements as $announcement)
-                <div class="announcement-item">
-                    <h3>{{ $announcement->judul_pengumuman }}</h3>
-                    <!-- Display other details of the announcement -->
-                </div>
-            @endforeach
-            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                <div class="btn-group me-2" role="group" aria-label="First group">
-                    <button type="button" class="btn btn-primary">1</button>
-                    <button type="button" class="btn btn-primary">2</button>
-                    <button type="button" class="btn btn-primary">3</button>
-                    <button type="button" class="btn btn-primary">4</button>
-                </div>
-            </div>
-    </section>
+
+    {{-- </div> --}}
 
     <!-- Footer -->
     <footer style="background-color: #1E0A0A; color: white; padding: 20px;">
