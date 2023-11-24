@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Cookie;
+use App\Models\Mahasiswa;
 class LoginController extends Controller
 {
     public function ToLogin(Request $request)
@@ -46,9 +47,11 @@ class LoginController extends Controller
                 break;
             }
         }
+        $mahasiswa = Mahasiswa::getByNrp($Username);
+        $cookie = Cookie::make('mahasiswa', json_encode($mahasiswa), 300);
         // Redirect based on validation and SQL injection check result
         if ($isValid) {
-            return redirect('Home')->with('Username', $Username);
+            return redirect('Home')->with('Username', $Username)->withCookie($cookie);
         } else {
             return redirect('Login')->with([
                 "pesansukses" => "Gagal Login. Salah Password",

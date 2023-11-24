@@ -1,5 +1,6 @@
 @extends('layouts.SIM')
 
+
 {{-- @section('header')
     <div class="container">
         <!-- Header -->

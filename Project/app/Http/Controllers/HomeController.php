@@ -15,20 +15,11 @@ class HomeController extends Controller
 
     public function index(Request $request)
     {
-        try {
-            $nrp_mhs = $request->input('Username');
-            logger("Input NRP: $nrp_mhs"); // Log the input value
-            $mahasiswa = Mahasiswa::getByNrp($nrp_mhs);
-            logger($mahasiswa);
-        } catch (\Exception $e) {
-            logger("Error: " . $e->getMessage());
-        }
         // Fetch announcements using Eloquent model
         $announcements = $this->getAnnouncements();
-        $cookie = Cookie::make('mahasiswa', json_encode($mahasiswa), 300);
         return response()->view('home', [
             'announcements' => $announcements,
-        ])->withCookie($cookie);
+        ]);
     }
 
 

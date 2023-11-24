@@ -14,6 +14,7 @@
 
 @endsection --}}
 
+
 @section('content')
     {{-- <div class="container"> --}}
     <!-- Display student data if available -->

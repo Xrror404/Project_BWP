@@ -19,7 +19,7 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 Route::prefix('/Login')->group(function () {
-    Route::get('/', [LoginController::class, "ToLogin"]);
+    Route::get('/', [LoginController::class, "ToLogin"])->name('login');
     Route::post('/Verification', [LoginController::class, 'AreUserExist'])->name('LoginForm');
 });
 Route::get('/Home', [HomeController::class, 'index'])->name('home');

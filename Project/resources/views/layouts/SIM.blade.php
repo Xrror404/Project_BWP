@@ -5,6 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistem ISTTS - Home</title>
+    <link rel="icon" href="../Assets/logoistts.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
@@ -13,16 +17,20 @@
             color: white;
             padding: 1%;
             display: flex;
-            position:inherit;
+            position: inherit;
             margin-left: 5em;
         }
+
+        #DropDownButton .dropdown-menu .dropdown-item:hover {
+            background-color: rgba(108, 117, 125, 0.75) !important;
+        }
+
 
         .sidebar div {
             background-color: #360000;
             color: white;
             padding: 10px;
         }
-
         .sidebar {
             width: 250px;
             height: 100%;
@@ -184,8 +192,36 @@
         <div class="col-md-3">
             <div class="sidebar p-0 bg-dark">
                 {{-- @yield('sidebar') --}}
-                <div class="container">
-                    @yield("DataMhs")
+                <div class="container p-0">
+                    @php
+                        $mahasiswaCookie = json_decode(request()->cookie('mahasiswa'));
+                        // Menampilkan data mahasiswa
+                        $namaMhs = $mahasiswaCookie->nama_mhs ?? 'KOSONG';
+                        $nrpMhs = $mahasiswaCookie->nrp_mhs ?? 'KOSONG';
+                    @endphp
+
+                    <div class="card p-0" style="width: auto;"id="UserCard">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $namaMhs }}</h5>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="card-text">{{ $nrpMhs }}</p>
+                                <div class="dropdown">
+                                    <span style="cursor: pointer;" id="dropdownMenuButton" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        &#9660; <!-- Tombol arrow ke bawah -->
+                                    </span>
+                                    <div class="dropdown-menu bg-light dropdown-menu-right"
+                                        aria-labelledby="dropdownMenuButton" id="DropDownButton">
+                                        <button class="dropdown-item" type="button">Biodata</button>
+                                        <button class="dropdown-item" type="button"
+                                            onclick="redirectToLogin()">Logout</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <nav class="navbar navbar-dark bg-dark p-0">
                     <div class="container-fluid">
@@ -229,7 +265,8 @@
                                     <button class="text-black h4" onclick="ta()">History TA/Tesis</button>
                                 </div>
                                 <button class="text-black h4" onclick="toggleInfo('info8', event)">Pengaturan</button>
-                                <button class="text-black h4" onclick="toggleInfo('info9', event)">Kontak Dosen</button>
+                                <button class="text-black h4" onclick="toggleInfo('info9', event)">Kontak
+                                    Dosen</button>
                             </div>
                         </div>
 
@@ -238,11 +275,10 @@
                 </nav>
             </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9 p-0">
 
         </div>
     </div>
-    <!-- Include the content from sections -->
     <div class="container-fluid">
         <!-- Header -->
         <header>
@@ -284,9 +320,15 @@
             var currentButton = event.currentTarget;
             currentButton.classList.add('active');
         }
+
         function redirectToHome() {
             window.location.href = '{{ route('home') }}';
         }
+
+        function redirectToLogin() {
+            window.location.href = '{{ route('login') }}';
+        }
+
         function redirectToPoint() {
             window.location.href = 'point';
         }
