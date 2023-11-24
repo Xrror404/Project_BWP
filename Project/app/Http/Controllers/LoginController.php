@@ -46,7 +46,6 @@ class LoginController extends Controller
                 break;
             }
         }
-
         // Redirect based on validation and SQL injection check result
         if ($isValid) {
             return redirect('Home')->with('Username', $Username);

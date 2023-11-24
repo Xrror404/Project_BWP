@@ -11,7 +11,10 @@
         header {
             background-color: #360000;
             color: white;
-            padding: 20px;
+            padding: 1%;
+            display: flex;
+            position:inherit;
+            margin-left: 5em;
         }
 
         .sidebar div {
@@ -176,149 +179,166 @@
     </style>
 </head>
 
-<body>
+<body class="bg-dark">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="sidebar p-0 bg-dark">
+                {{-- @yield('sidebar') --}}
+                <div class="container">
+                    @yield("DataMhs")
+                </div>
+                <nav class="navbar navbar-dark bg-dark p-0">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <br>
+                        <br>
+                        <div class="collapse" id="navbarToggleExternalContent">
+                            <div class="bg-dark p-4">
+                                <button class="text-black h4" onclick="redirectToHome()">Beranda</button>
+                                <button id="pointButton" class="text-black h4"
+                                    onclick="redirectToPoint()">Point</button>
+                                <button class="text-black h4" onclick="toggleInfo('info3', event)">Akademik</button>
+                                <div class="additional-info" id="info3">
+                                    <button class="text-black h4" onclick="redirectToInfo()">Informasi Mata</button>
+                                    <button class="text-black h4" onclick="laporan()">laporan Nilai</button>
+                                    <button class="text-black h4" onclick="transkip()">Transkip Nilai</button>
+                                    <button class="text-black h4" onclick="grafik()">Grafik</button>
+                                </div>
+                                <button class="text-black h4" onclick="toggleInfo('info4', event)">Jadwal</button>
+                                <div class="additional-info" id="info4">
+                                    <button class="text-black h4" onclick="jkuliah()">Jadwal Kuliah</button>
+                                    <button class="text-black h4" onclick="jujian()">Jadwal Ujian</button>
+                                    <button class="text-black h4" onclick="jdosen()">Jadwal Dosen</button>
+                                </div>
+                                <button class="text-black h4" onclick="toggleInfo('info5', event)">Rencana
+                                    Studi</button>
+                                <div class="additional-info" id="info5">
+                                    <button class="text-black h4" onclick="frs()">Pengisian FRS</button><button
+                                        class="text-black h4" onclick="batal()">Batal Tambah</button>
+                                    <button class="text-black h4" onclick="drop()">Drop</button>
+                                    <button class="text-black h4" onclick="krs()">Download KRS</button>
+                                </div>
+                                <button class="text-black h4" onclick="toggleInfo('info6', event)">Laporan
+                                    Keuangan</button>
+                                <button class="text-black h4" onclick="toggleInfo('info7', event)">TA/Tesis</button>
+                                <div class="additional-info" id="info7">
+                                    <button class="text-black h4" onclick="ta()">History TA/Tesis</button>
+                                </div>
+                                <button class="text-black h4" onclick="toggleInfo('info8', event)">Pengaturan</button>
+                                <button class="text-black h4" onclick="toggleInfo('info9', event)">Kontak Dosen</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="col-md-9">
+
+        </div>
+    </div>
     <!-- Include the content from sections -->
-    <div class="container">
+    <div class="container-fluid">
         <!-- Header -->
         <header>
-            <img src="../Assets/logoistts.png" alt="" style="height: 2vw; height: 2vw">
-            <h1>Sistem Informasi Mahasiswa</h1>
-        </header>
-    </div>
-
-    <div class="sidebar">
-        {{-- @yield('sidebar') --}}
-        <nav class="navbar navbar-dark bg-dark">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <br>
-                <br>
-                <div class="collapse" id="navbarToggleExternalContent">
-                    <div class="bg-dark p-4">
-                        <button class="text-black h4" onclick="toggleInfo('info1', event)">Berada</button>
-                        <button id="pointButton" class="text-black h4" onclick="redirectToPoint()">Point</button>
-                        <button class="text-black h4" onclick="toggleInfo('info3', event)">Akademik</button>
-                        <div class="additional-info" id="info3">
-                            <button class="text-black h4" onclick="redirectToInfo()">Informasi Mata</button>
-                            <button class="text-black h4" onclick="laporan()">laporan Nilai</button>
-                            <button class="text-black h4" onclick="transkip()">Transkip Nilai</button>
-                            <button class="text-black h4" onclick="grafik()">Grafik</button>
-                        </div>
-                        <button class="text-black h4" onclick="toggleInfo('info4', event)">Jadwal</button>
-                        <div class="additional-info" id="info4">
-                            <button class="text-black h4" onclick="jkuliah()">Jadwal Kuliah</button>
-                            <button class="text-black h4" onclick="jujian()">Jadwal Ujian</button>
-                            <button class="text-black h4" onclick="jdosen()">Jadwal Dosen</button>
-                        </div>
-                        <button class="text-black h4" onclick="toggleInfo('info5', event)">Rencana Studi</button>
-                        <div class="additional-info" id="info5">
-                            <button class="text-black h4" onclick="frs()">Pengisian FRS</button><button
-                                class="text-black h4" onclick="batal()">Batal Tambah</button>
-                            <button class="text-black h4" onclick="drop()">Drop</button>
-                            <button class="text-black h4" onclick="krs()">Download KRS</button>
-                        </div>
-                        <button class="text-black h4" onclick="toggleInfo('info6', event)">Laporan Keuangan</button>
-                        <button class="text-black h4" onclick="toggleInfo('info7', event)">TA/Tesis</button>
-                        <div class="additional-info" id="info7">
-                            <button class="text-black h4" onclick="ta()">History TA/Tesis</button>
-                        </div>
-                        <button class="text-black h4" onclick="toggleInfo('info8', event)">Pengaturan</button>
-                        <button class="text-black h4" onclick="toggleInfo('info9', event)">Kontak Dosen</button>
-                    </div>
-                </div>
-
-
+            <div class="container p-0 justify-content-center">
+                <img src="../Assets/logoistts.png" alt="" style="height: 2vw; height: 2vw">
+                <h1>Sistem Informasi Mahasiswa</h1>
             </div>
-        </nav>
+        </header>
+        <div class="content bg-dark">
+            @yield('content')
+        </div>
     </div>
-    <div class="content">
-        @yield('content')
 
 
 
 
-        <!-- Your JavaScript code -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-        </script>
-        <script>
-            function handleButtonClick(event) {
-                event.preventDefault();
+    <!-- Your JavaScript code -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+    <script>
+        function handleButtonClick(event) {
+            event.preventDefault();
+        }
+
+        function toggleInfo(infoId) {
+            // Toggle the visibility of the additional information
+            var infoElement = document.getElementById(infoId);
+            if (infoElement) {
+                infoElement.style.display = infoElement.style.display === 'none' ? 'block' : 'none';
             }
 
-            function toggleInfo(infoId) {
-                // Toggle the visibility of the additional information
-                var infoElement = document.getElementById(infoId);
-                if (infoElement) {
-                    infoElement.style.display = infoElement.style.display === 'none' ? 'block' : 'none';
-                }
-
-                // Toggle the active class for the clicked button
-                var clickedButton = document.querySelector('.active');
-                if (clickedButton) {
-                    clickedButton.classList.remove('active');
-                }
-
-                var currentButton = event.currentTarget;
-                currentButton.classList.add('active');
+            // Toggle the active class for the clicked button
+            var clickedButton = document.querySelector('.active');
+            if (clickedButton) {
+                clickedButton.classList.remove('active');
             }
 
-            function redirectToPoint() {
-                window.location.href = 'point';
-            }
+            var currentButton = event.currentTarget;
+            currentButton.classList.add('active');
+        }
+        function redirectToHome() {
+            window.location.href = '{{ route('home') }}';
+        }
+        function redirectToPoint() {
+            window.location.href = 'point';
+        }
 
-            function redirectToInfo() {
-                window.location.href = '{{ route('info') }}';
-            }
+        function redirectToInfo() {
+            window.location.href = '{{ route('info') }}';
+        }
 
-            function laporan() {
-                window.location.href = '{{ route('laporan') }}';
-            }
+        function laporan() {
+            window.location.href = '{{ route('laporan') }}';
+        }
 
-            function transkip() {
-                window.location.href = '{{ route('transkip') }}';
-            }
+        function transkip() {
+            window.location.href = '{{ route('transkip') }}';
+        }
 
-            function grafik() {
-                window.location.href = '{{ route('grafik') }}';
-            }
+        function grafik() {
+            window.location.href = '{{ route('grafik') }}';
+        }
 
-            function jkuliah() {
-                window.location.href = '{{ route('jkuliah') }}';
-            }
+        function jkuliah() {
+            window.location.href = '{{ route('jkuliah') }}';
+        }
 
-            function jujian() {
-                window.location.href = '{{ route('jujian') }}';
-            }
+        function jujian() {
+            window.location.href = '{{ route('jujian') }}';
+        }
 
-            function jdosen() {
-                window.location.href = '{{ route('jdosen') }}';
-            }
+        function jdosen() {
+            window.location.href = '{{ route('jdosen') }}';
+        }
 
-            function frs() {
-                window.location.href = '{{ route('frs') }}';
-            }
+        function frs() {
+            window.location.href = '{{ route('frs') }}';
+        }
 
-            function batal() {
-                window.location.href = '{{ route('batal') }}';
-            }
+        function batal() {
+            window.location.href = '{{ route('batal') }}';
+        }
 
-            function drop() {
-                window.location.href = '{{ route('drop') }}';
-            }
+        function drop() {
+            window.location.href = '{{ route('drop') }}';
+        }
 
-            function krs() {
-                window.location.href = '{{ route('krs') }}';
-            }
+        function krs() {
+            window.location.href = '{{ route('krs') }}';
+        }
 
-            function ta() {
-                window.location.href = '{{ route('ta') }}';
-            }
-        </script>
+        function ta() {
+            window.location.href = '{{ route('ta') }}';
+        }
+    </script>
 
 </body>
 

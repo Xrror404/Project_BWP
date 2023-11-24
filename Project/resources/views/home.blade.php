@@ -13,7 +13,17 @@
 {{-- @section('sidebar')
 
 @endsection --}}
+@section('DataMhs')
+    @php
+        $mahasiswaCookie = json_decode(request()->cookie('mahasiswa'));
+        // Menampilkan data mahasiswa
+        $namaMhs = $mahasiswaCookie->nama_mhs ?? 'KOSONG';
+        $nrpMhs = $mahasiswaCookie->nrp_mhs ?? 'KOSONG';
+    @endphp
 
+    <h1>{{ $namaMhs }}</h1>
+    <p>{{ $nrpMhs }}</p>
+@endsection
 @section('content')
     {{-- <div class="container">
         <!-- Display student data if available -->
@@ -73,6 +83,6 @@
             <p>2020 © Sistem Informasi Mahasiswa iSTTS</p>
         </div>
     </footer>
-
     </div>
+    
 @endsection

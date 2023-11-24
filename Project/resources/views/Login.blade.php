@@ -73,9 +73,8 @@
                         <form action="{{ route('LoginForm') }}" method="POST">
                             @csrf
                             <div class="form-group pt-2">
-                                <p class="p-0"><b>Username</b></p>
-                                <input type="text" name="Username" id="" placeholder="Username"
-                                    style="width:100%;height:3em;">
+                                <label for="Username"><b>Username</b></label>
+                                <input type="text" name="Username" id="Username" placeholder="Username" style="width:100%;height:3em;">
                             </div>
                             <div class="form-group pt-2">
                                 <p class="p-0"><b>Password</b></p>
