@@ -21,7 +21,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-6">
-                    <h5 class="card-title"> Point Kemahasiswaan </h5>
+                    <h1 class="card-title"> Point Kemahasiswaan </h1>
                 </div>
                 <div class="col-md-6 text-right">
                     <h6 class="card-title">Cetak</h6>

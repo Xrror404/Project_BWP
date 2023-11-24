@@ -25,7 +25,7 @@
         </div>
     </div> --}}
     <div class="card">
-        <div class="card-header">
+        <div class="card-header text-light">
             Perubahan Jadwal Kuliah
         </div>
         <div class="card-body">

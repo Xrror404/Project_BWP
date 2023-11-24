@@ -17,8 +17,9 @@
             color: white;
             padding: 1%;
             display: flex;
-            position: inherit;
-            margin-left: 5em;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 10vw;
         }
 
         #DropDownButton .dropdown-menu .dropdown-item:hover {
@@ -31,6 +32,7 @@
             color: white;
             padding: 10px;
         }
+
         .sidebar {
             width: 250px;
             height: 100%;
@@ -45,7 +47,7 @@
         .content {
             margin-left: 250px;
             /* Adjust according to the sidebar width */
-            padding: 20px;
+            padding: 2vw;
         }
 
         /* Style the sidebar links */
@@ -280,12 +282,11 @@
         </div>
     </div>
     <div class="container-fluid">
-        <!-- Header -->
         <header>
-            <div class="container p-0 justify-content-center">
-                <img src="../Assets/logoistts.png" alt="" style="height: 2vw; height: 2vw">
-                <h1>Sistem Informasi Mahasiswa</h1>
-            </div>
+            <div class="container p-0 d-flex align-items-center">
+                <img src="../Assets/logoistts.png" alt="" style="height: 2vw; height: 6vh;">
+                <h1 class="ms-3 mb-0">Sistem Informasi Mahasiswa</h1>
+            </div>            
         </header>
         <div class="content bg-dark">
             @yield('content')
