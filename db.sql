@@ -82,7 +82,7 @@ VALUES
     ('MHSINF0004', 11, 'Yoga Pramana Syahputra Teguh', 'yoga.p22@mhs.istts.ac.id', 081380471118, 0, '222117068', '69420666', '2022-06-31'),
     ('MHSDKV0001', 17, 'Dahren Ericsson', 'dahren.e23@mhs.istts.ac.id', 087750999479, 0, '223172098', 'redfrosty', '2023-06-31'),
     ('MHSSIB0001', 18, 'Ivan Santoso', 'ivan.s21@mhs.istts.ac.id', 087853999381, 0, '221180185', 'dunstanganteng', '2021-06-31'),
-    ('DSNINF0001', 11, 'Ir. Edwin Pramana, M.AppSc., Ph.D.', 'epramana@stts.edu', 081232576313, 1, 'edwin', 'edwinpramana', 1998-06-31'),
+    ('DSNINF0001', 11, 'Ir. Edwin Pramana, M.AppSc., Ph.D.', 'epramana@stts.edu', 081232576313, 1, 'edwin', 'edwinpramana', '1998-06-31'),
     ('DSNINF0002', 11, 'Dr. Yosi Kristian, S.Kom. M.Kom.', 'yosi@stts.edu', 081553779876, 1, 'yosi', 'yosikristian', '2004-06-31'),
     ('DSNINF0003', 11, 'Dr. Ir. Esther Irawati Setiawan, S.Kom, M.Kom', 'esther@stts.edu', 081492736548, 1, 'esther', 'estherirawati', '2008-06-31'),
     ('DSNINF0004', 11, 'Reddy Alexandro Harianto, S.Kom., M.Kom.', 'reddy@stts.edu', 081703331113, 1, 'reddy', 'reddyharianto', '2013-06-31'),
