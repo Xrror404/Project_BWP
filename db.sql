@@ -102,7 +102,7 @@ VALUES
     ('DSNINF0018', 11, 'Ir. Iwan Chandra, S.Kom., M.Kom.', 'iwan@stts.edu', 085843691207, 1, 'iwan', 'iwanchandra', '2013-06-31'),
     ('DSNINF0019', 11, 'Kevin Setiono, S.Kom. M.Kom.', 'kevin@stts.edu', 082197365804, 1, 'kevin', 'kevinsetiono', '2017-06-31'),
     ('DSNINF0020', 11, 'Mikhael Setiawan, S.Kom. M.Kom.', 'mikhael@stts.edu', 031582047936, 1, 'mikhael', 'mikhaelsetiawan', '2014-06-31'),
-    ('DSNINF0021', 11, 'Evan Kusuma Susanto, S.Kom., M.Kom.', 'evan@stts.edu', 081639204857, 1, 'evan', 'evansusanto', '2019-06-31')
+    ('DSNINF0021', 11, 'Evan Kusuma Susanto, S.Kom., M.Kom.', 'evan@stts.edu', 081639204857, 1, 'evan', 'evansusanto', '2019-06-31'),
     ('DSNSIB0001', 18, 'Dr. John Doe, S.Kom., M.Kom.', 'john@stts.edu', '081234567890', 1, 'john', 'johndoe', '2015-06-31'),
     ('DSNSIB0002', 18, 'Dr. Jane Smith, S.Kom.', 'jane@stts.edu', '085678901234', 1, 'jane', 'janesmith', '2010-06-31'),
     ('DSNSIB0003', 18, 'Ir. Alex Johnson, M.Kom.', 'alex@stts.edu', '087654321098', 1, 'alex', 'alexjohnson', '2018-06-31'),
