@@ -15,7 +15,7 @@ CREATE TABLE user (
     role_user SMALLINT,
     username VARCHAR(30),
     password VARCHAR(255),
-    user_added_date DATE
+    user_added_date DATE,
     FOREIGN KEY (id_jurusan) REFERENCES jurusan(id_jurusan)
 );
 
