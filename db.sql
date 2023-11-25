@@ -64,7 +64,7 @@ CREATE TABLE nilai (
 CREATE TABLE file (
     id_file VARCHAR(5) PRIMARY KEY,
     nama_file VARCHAR(255),
-    isi_file VARCHAR(255),
+    isi_file VARCHAR(255)
 );
 
 
