@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Cookie;
-use App\Models\Mahasiswa;
+use App\Models\Announcement;
 use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
@@ -21,14 +21,9 @@ class HomeController extends Controller
             'announcements' => $announcements,
         ]);
     }
-
-
-    // Function to fetch announcements (replace this with your actual logic)
-    private function getAnnouncements()
+    public function getAnnouncements()
     {
-        $announcements = DB::connection("KoneksiDatabase")
-            ->table("Pengumuman")
-            ->get();
+        $announcements = Announcement::paginate(10); // Fetch 10 records per page
 
         return $announcements;
     }
