@@ -277,7 +277,7 @@ VALUES
     ('PE0029', 'Sertifikat Tanda Lulus ECC Periode Genap 2022/2023 Siap Diambil', 'https://sim.istts.ac.id/pengumuman/2106/Sertifikat-Tanda-Lulus-ECC-Periode-Genap-2022-2023-Siap-Diambil', '2023-09-08'),
     ('PE0030', '[BAA] Penerbitan SK TA/Thesis Periode Agustus 2023', 'https://sim.istts.ac.id/pengumuman/2105/[BAA]-Penerbitan-SK-TA-Thesis-Periode-Agustus-2023', '2023-09-08');
 
-INSERT INTO poin (id_acara, nama_poin, tipe_poin, jml_poin, poin_added_date)
+INSERT INTO poin (id_acara, nama_acara, tipe_acara, jml_poin, poin_added_date)
 VALUES
     ('MB0001', 'PESERTA UKM BADMINTON GASAL 2022/2023', 0, 200, '2022-08-01'),
     ('MB0002', 'PESERTA UKM BADMINTON GENAP 2022/2023', 0, 200, '2023-02-01'),
