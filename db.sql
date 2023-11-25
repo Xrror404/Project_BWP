@@ -13,8 +13,8 @@ CREATE TABLE user (
     email_user VARCHAR(50),
     nmrtlp CHAR(12),
     role_user SMALLINT,
-    username VARCHAR(30),
-    password VARCHAR(255),
+    user_username VARCHAR(30),
+    user_password VARCHAR(255),
     user_added_date DATE,
     FOREIGN KEY (id_jurusan) REFERENCES jurusan(id_jurusan)
 );
@@ -74,7 +74,7 @@ VALUES
     (17, 'Desain Komunikasi Visual'),
     (18, 'Sistem Informasi Bisnis');
 
-INSERT INTO user (id_user, id_jurusan, nama_user, email_user, nmrtlp, role_user, username, password, user_added_date)
+INSERT INTO user (id_user, id_jurusan, nama_user, email_user, nmrtlp, role_user, user_username, user_password, user_added_date)
 VALUES 
     ('MHSINF0001', 11, 'Michael Setiabudi', 'michael.s22@mhs.istts.ac.id', 082196236711, 0, '222117045', 'setiabudi123', '2022-06-31'),
     ('MHSINF0002', 11, 'Michaell Ezekial', 'michaell.e22@mhs.istts.ac.id', 081332075758, 0, '222117047', 'meme69420', '2022-06-31'),
