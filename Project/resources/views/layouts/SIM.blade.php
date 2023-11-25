@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Sistem ISTTS - Home</title>
     <link rel="icon" href="../Assets/logoistts.png" type="image/x-icon">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
