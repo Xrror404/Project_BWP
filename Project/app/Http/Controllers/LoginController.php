@@ -35,14 +35,14 @@ class LoginController extends Controller
         $isValid = false;
 
         $daftarMhs = DB::connection("KoneksiDatabase")
-            ->table("mahasiswa")
-            ->where('nrp_mhs', $Username)
-            ->where('password_mhs', $Password)
+            ->table("user")
+            ->where('user_username', $Username)
+            ->where('user_password', $Password)
             ->get();
 
         // Check if the provided credentials are valid (without hashing the password)
         foreach ($daftarMhs as $Mahasiswa) {
-            if ($Mahasiswa->nrp_mhs === $Username && $Mahasiswa->password_mhs === $Password) {
+            if ($Mahasiswa->user_username === $Username && $Mahasiswa->user_password === $Password) {
                 $isValid = true;
                 break;
             }

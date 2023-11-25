@@ -9,11 +9,11 @@ class Mahasiswa extends Model
 {
     use HasFactory;
 
-    protected $table = 'mahasiswa';
-    protected $primaryKey = 'nrp_mhs';
+    protected $table = 'user';
+    protected $primaryKey = 'id_user';
     public $timestamps = false;
-    public static function getByNrp($nrp_mhs)
+    public static function getByNrp($user_username)
     {
-        return self::where('nrp_mhs', $nrp_mhs)->first();
+        return self::where('user_username', $user_username)->first();
     }
 }

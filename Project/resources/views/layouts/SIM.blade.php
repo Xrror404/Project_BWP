@@ -194,8 +194,8 @@
                     @php
                         $mahasiswaCookie = json_decode(request()->cookie('mahasiswa'));
                         // Menampilkan data mahasiswa
-                        $namaMhs = $mahasiswaCookie->nama_mhs ?? 'KOSONG';
-                        $nrpMhs = $mahasiswaCookie->nrp_mhs ?? 'KOSONG';
+                        $namaMhs = $mahasiswaCookie->nama_user ?? 'KOSONG';
+                        $nrpMhs = $mahasiswaCookie->user_username ?? 'KOSONG';
                     @endphp
 
                     <div class="card p-0" style="width: auto;"id="UserCard">
