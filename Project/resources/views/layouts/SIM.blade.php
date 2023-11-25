@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
     <title>Sistem ISTTS - Home</title>
     <link rel="icon" href="../Assets/logoistts.png" type="image/x-icon">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -12,14 +12,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
-        header {
+        #headerContainer {
             background-color: #360000;
             color: white;
-            padding: 1%;
+            padding: 2vh;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding-left: 10vw;
         }
 
         #DropDownButton .dropdown-menu .dropdown-item:hover {
@@ -34,9 +32,9 @@
         }
 
         .sidebar {
-            width: 250px;
-            height: 100%;
-            position: fixed;
+            width: 16vw;
+            height: 100vh;
+            position: absolute;
             top: 0;
             left: 0;
             background-color: #f0f0f0;
@@ -45,8 +43,7 @@
 
         /* Style the content area */
         .content {
-            margin-left: 250px;
-            /* Adjust according to the sidebar width */
+            margin-left: 0%;
             padding: 2vw;
         }
 
@@ -189,12 +186,11 @@
     </style>
 </head>
 
-<body class="bg-dark">
-    <div class="row">
-        <div class="col-md-3">
+<body class="bg-dark p-0">
+    <div class="row p-0">
+        <div class="col-md-2 pt-0">
             <div class="sidebar p-0 bg-dark">
-                {{-- @yield('sidebar') --}}
-                <div class="container p-0">
+                <div class="container-fluid p-0">
                     @php
                         $mahasiswaCookie = json_decode(request()->cookie('mahasiswa'));
                         // Menampilkan data mahasiswa
@@ -277,19 +273,16 @@
                 </nav>
             </div>
         </div>
-        <div class="col-md-9 p-0">
-
-        </div>
-    </div>
-    <div class="container-fluid">
-        <header>
-            <div class="container p-0 d-flex align-items-center">
-                <img src="../Assets/logoistts.png" alt="" style="height: 2vw; height: 6vh;">
-                <h1 class="ms-3 mb-0">Sistem Informasi Mahasiswa</h1>
-            </div>            
-        </header>
-        <div class="content bg-dark">
-            @yield('content')
+        <div class="col-md-10 p-0">
+            <div class="container-fluid m-0 p-0">
+                    <div class="container-fluid" id="headerContainer">
+                        <img src="../Assets/logoistts.png" alt="" style="height: 2vw; height: 6vh;">
+                        <h1 class="ms-3 mb-0">Sistem Informasi Mahasiswa</h1>
+                    </div>            
+                <div class="content bg-dark pb-0">
+                    @yield('content')
+                </div>
+            </div>
         </div>
     </div>
 
