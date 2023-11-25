@@ -43,8 +43,16 @@ CREATE TABLE poin (
     poin_added_date DATE
 );
 
-CREATE TABLE matkul_diambil (
-    id_matkul_diambil VARCHAR(10) PRIMARY KEY,
+CREATE TABLE matkul_diambil_mhs (
+    id_matkul_diambil_mhs VARCHAR(10) PRIMARY KEY,
+    id_matkul VARCHAR(5),
+    id_user VARCHAR(10),
+    FOREIGN KEY (id_matkul) REFERENCES matkul(id_matkul),
+    FOREIGN KEY (id_user) REFERENCES user(id_user)
+);
+
+CREATE TABLE matkul_diambil_dosen (
+    id_matkul_diambil_dsn VARCHAR(10) PRIMARY KEY,
     id_matkul VARCHAR(5),
     id_user VARCHAR(10),
     FOREIGN KEY (id_matkul) REFERENCES matkul(id_matkul),
@@ -68,6 +76,13 @@ CREATE TABLE file (
     isi_file VARCHAR(255)
 );
 
+CREATE TABLE penerima_poin (
+    id_pp VARCHAR(5) PRIMARY KEY,
+    id_penerima VARCHAR(10),
+    id_acara CHAR(6),
+    FOREIGN KEY (id_penerima) REFERENCES user(id_user),
+    FOREIGN KEY (id_acara) REFERENCES poin(id_acara)
+);
 
 INSERT INTO jurusan (id_jurusan, nama_jurusan)
 VALUES
@@ -299,7 +314,7 @@ VALUES
     ('KR0002', 'PESERTA WELCOME PARTY PERSEKUTUAN DOA ISTTS 2022', 3, 62, '2022-09-16'),
     ('KR0003', 'PESERTA RETRET PERSEKUTUAN DOA ISTTS 2022', 3, 100,'2022-12-02');
 
-INSERT INTO matkul_diambil (id_matkul_diambil, id_matkul, id_user)
+INSERT INTO matkul_diambil_mhs (id_matkul_diambil_mhs, id_matkul, id_user)
 VALUES
     ('1MTKINF001', 95, 'MHSINF0001'),
     ('1MTKINF002', 92, 'MHSINF0001'),
@@ -344,7 +359,10 @@ VALUES
     ('1MHSSIB003', 69, 'MHSSIB0001'),
     ('1MHSSIB004', 70, 'MHSSIB0001'),
     ('1MHSSIB005', 71, 'MHSSIB0001'),
-    ('1MHSSIB006', 72, 'MHSSIB0001'),
+    ('1MHSSIB006', 72, 'MHSSIB0001');
+
+INSERT INTO matkul_diambil_dosen (id_matkul_diambil_dsn, id_matkul, id_user)
+VALUES
     ('1DSNINF001', 95, 'DSNINF0020'),
     ('2DSNINF001', 92, 'DSNINF0019'),
     ('3DSNINF001', 93, 'DSNINF0015'),
@@ -428,3 +446,61 @@ VALUES
     ('FL009', '[BAK] Prosedur Kerja Praktek 2022', 'https://youtu.be/dQw4w9WgXcQ?si=Emix_YOlUkl8pMRj'),
     ('FL010', '[PM] Template LPJ Pengabdian kepada Masyarakat (Bagi Mahasiswa)', 'https://youtu.be/dQw4w9WgXcQ?si=Emix_YOlUkl8pMRj');
  
+INSERT INTO penerima_poin (id_pp, id_penerima, id_acara)
+VALUES
+    ('PP001', 'MHSINF0001', 'MB0001'),
+    ('PP002', 'MHSINF0001', 'MB0002'),
+    ('PP003', 'MHSINF0001', 'PN0001'),
+    ('PP004', 'MHSINF0001', 'PN0003'),
+    ('PP005', 'MHSINF0001', 'OG0001'),
+    ('PP007', 'MHSINF0001', 'KR0001'),
+    ('PP008', 'MHSINF0001', 'KR0002'),
+    ('PP009', 'MHSINF0002', 'MB0002'),
+    ('PP010', 'MHSINF0002', 'PN0001'),
+    ('PP011', 'MHSINF0002', 'PN0003'),
+    ('PP012', 'MHSINF0002', 'PN0009'),
+    ('PP013', 'MHSINF0002', 'OG0001'),
+    ('PP014', 'MHSINF0002', 'OG0002'),
+    ('PP015', 'MHSINF0002', 'KR0003'),
+    ('PP016', 'MHSINF0003', 'MB0001'),
+    ('PP017', 'MHSINF0003', 'MB0002'),
+    ('PP018', 'MHSINF0003', 'MB0003'),
+    ('PP019', 'MHSINF0003', 'PN0001'),
+    ('PP020', 'MHSINF0003', 'PN0003'),
+    ('PP021', 'MHSINF0003', 'PN0005'),
+    ('PP022', 'MHSINF0003', 'PN0007'),
+    ('PP023', 'MHSINF0003', 'PN0008'),
+    ('PP024', 'MHSINF0003', 'PN0009'),
+    ('PP025', 'MHSINF0003', 'OG0001'),
+    ('PP026', 'MHSINF0003', 'OG0002'),
+    ('PP027', 'MHSINF0003', 'KR0001'),
+    ('PP028', 'MHSINF0003', 'KR0002'),
+    ('PP029', 'MHSINF0003', 'KR0003'),
+    ('PP030', 'MHSINF0004', 'MB0001'),
+    ('PP031', 'MHSINF0004', 'MB0002'),
+    ('PP032', 'MHSINF0004', 'MB0003'),
+    ('PP033', 'MHSINF0004', 'PN0001'),
+    ('PP034', 'MHSINF0004', 'PN0002'),
+    ('PP035', 'MHSINF0004', 'PN0003'),
+    ('PP036', 'MHSINF0004', 'PN0004'),
+    ('PP037', 'MHSINF0004', 'PN0007'),
+    ('PP038', 'MHSINF0004', 'PN0008'),
+    ('PP039', 'MHSINF0004', 'PN0009'),
+    ('PP040', 'MHSINF0004', 'PN0010'),
+    ('PP041', 'MHSINF0004', 'OG0001'),
+    ('PP042', 'MHSINF0004', 'OG0002'),
+    ('PP043', 'MHSINF0004', 'KR0001'),
+    ('PP044', 'MHSINF0004', 'KR0002'),
+    ('PP045', 'MHSINF0004', 'KR0003'),
+    ('PP046', 'MHSDKV0001', 'MB0001'),
+    ('PP047', 'MHSDKV0001', 'MB0003'),
+    ('PP048', 'MHSDKV0001', 'PN0001'),
+    ('PP049', 'MHSDKV0001', 'PN0004'),
+    ('PP050', 'MHSDKV0001', 'OG0001'),
+    ('PP051', 'MHSSIB0001', 'MB0002'),
+    ('PP052', 'MHSSIB0001', 'MB0003'),
+    ('PP053', 'MHSSIB0001', 'PN0001'),
+    ('PP054', 'MHSSIB0001', 'PN0002'),
+    ('PP055', 'MHSSIB0001', 'PN0005'),
+    ('PP056', 'MHSSIB0001', 'PN0006'),
+    ('PP057', 'MHSSIB0001', 'OG0001');
