@@ -368,7 +368,7 @@ VALUES
     ('5DSNSIB001', 71, 'DSNSIB0005'),
     ('6DSNSIB001', 72, 'DSNSIB0006');
 
-INSERT INTO nilai (id_nilai, id_user, id_matkul, nilai_uts, nilai_uas, nilai_na)
+INSERT INTO nilai (id_nilai, id_user, id_matkul, nilai_uts, nilai_uas, nilai_akhir)
 VALUES
     ('NILAIINF01', 'MHSINF0001', 95, 80, 80, 80),
     ('NILAIINF02', 'MHSINF0001', 92, 80, 80, 80),
