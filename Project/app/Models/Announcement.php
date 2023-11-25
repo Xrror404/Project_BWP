@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Announcement extends Model
 {
     use HasFactory;
-    protected $table = 'pengumuman'; // Specify the table name if it differs from the default convention
+    protected $table = 'pengumuman'; 
 
-    protected $primaryKey = 'id_pengumuman'; // Specify the primary key if it differs from 'id'
+    protected $primaryKey = 'id_pengumuman';
 
     protected $fillable = [
         'id_pengumuman',
