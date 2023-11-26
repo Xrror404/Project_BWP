@@ -6,17 +6,28 @@
     <div class="card">
         <div class="card-body">
             <div class="row">
-                <div class="col-md-6">
-                    <h1 class="card-title"> Point Kemahasiswaan </h1>
+                <div class="col-md-8 d-flex align-items-center">
+                    <h1 class="text-light"> Point Kemahasiswaan </h1>
                 </div>
-                <div class="col-md-6 text-right">
-                    <h6 class="card-title">Cetak</h6>
-                    <h6 class="card-title">Akumulasi Point:</h6>
+                <div class="col-md-4 text-right p-0">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <Button class="btn btn-light"style="width:auto;"onclick="printPage()">
+                                <img src="../Assets/PrintLogo.png" alt="" srcset=""style="width:5vw;height: auto;padding-bottom:2vh;">
+                                <h5>Cetak</h5>
+                            </Button>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="container bg-light">
+                                <h4>Akumulasi Point</h4>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="card text-left" style="padding-left: 1vw;margin-left: 1vw;">
+    <div class="card text-left">
         <div class="card-body">
             <div class="row">
                 <div class="col-md-12 p-0">
@@ -26,7 +37,31 @@
                 </div>
             </div>
             <div class="container">
-                <h1>HAIII</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Tanggal</th>
+                            <th scope="col">Kegiatan</th>
+                            <th scope="col">Poin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td colspan="2">Larry the Bird</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -81,4 +116,9 @@
             </div>
         </div>
     </div> --}}
+    <script>
+        function printPage() {
+            window.print();
+        }
+    </script>
 @endsection
