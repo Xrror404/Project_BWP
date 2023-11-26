@@ -1,19 +1,5 @@
 @extends('layouts.SIM')
 
-{{-- @section('header')
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <img src="../Assets/logoistts.png" alt="" style="height: 2vw; height: 2vw">
-            <h1>Sistem Informasi Mahasiswa</h1>
-        </header>
-    </div>
-@endsection --}}
-
-{{-- @section('sidebar')
-
-@endsection --}}
-
 @section('content')
     {{-- <div class="container"> --}}
     <!-- Display student data if available -->
@@ -30,24 +16,24 @@
             </div>
         </div>
     </div>
-    {{-- minat bakat nya yang card nya  --}}
-    <div class="card">
+    <div class="card text-left" style="padding-left: 1vw;margin-left: 1vw;">
         <div class="card-body">
             <div class="row">
-                <div class="col-md-6">
-                    <h5 class="card-title">Minat bakat</h5>
-                    <p class="card-text">Tanggal:</p>
-                    <p class="card-text">Kegiatan:</p>
+                <div class="col-md-12 p-0">
+                    <div class="container"style="padding:2vh;">
+                        <h2 class="text-light">Point Seluruh</h2>
+                    </div>
                 </div>
-
-                <div class="col-md-6 text-right">
-                    <p class="card-text">Point</p>
-                </div>
+            </div>
+            <div class="container">
+                <h1>HAIII</h1>
             </div>
         </div>
     </div>
-    {{-- penalaran card nya --}}
     <br>
+    {{-- minat bakat nya yang card nya  --}}
+    {{-- penalaran card nya --}}
+    {{-- <br>
     <div class="card">
         <div class="card-body">
             <div class="row">
@@ -63,7 +49,6 @@
             </div>
         </div>
     </div>
-    {{-- organisasi card nya --}}
     <br>
     <div class="card">
         <div class="card-body">
@@ -80,10 +65,9 @@
             </div>
         </div>
     </div>
-    {{-- kerohanian --}}
     <br>
-    <div class="card">
-        <div class="card-body">
+    <div class="card"> 
+<div class="card-body">
             <div class="row">
                 <div class="col-md-6">
                     <h5 class="card-title">Kerohanian</h5>
@@ -96,5 +80,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection

@@ -342,7 +342,7 @@
         }
 
         function redirectToPoint() {
-            window.location.href = 'point';
+            window.location.href = '{{route('point')}}';
         }
 
         function redirectToInfo() {

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PoinController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -22,11 +23,9 @@ Route::prefix('/Login')->group(function () {
     Route::get('/', [LoginController::class, "ToLogin"])->name('login');
     Route::post('/Verification', [LoginController::class, 'AreUserExist'])->name('LoginForm');
 });
-Route::get('/Home', [HomeController::class, 'index'])->name('home');
+Route::get('/Home', [HomeController::class, 'RedirectTo'])->name('home');
 
-Route::get('/point', function () {
-    return view('point');
-})->name('point');
+Route::get('/point',[PoinController::class,'RedirectTo'])->name('point');
 Route::get('/info', function () {
     return view('info');
 })->name('info');

@@ -14,7 +14,7 @@ class HomeController extends Controller
 {
 
 
-    public function index(Request $request)
+    public function RedirectTo(Request $request)
     {
         // Fetch announcements using Eloquent model
         $announcements = $this->getAnnouncements();
