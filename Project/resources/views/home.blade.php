@@ -1,29 +1,7 @@
 @extends('layouts.SIM')
 
-{{-- @section('header')
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <img src="../Assets/logoistts.png" alt="" style="height: 2vw; height: 2vw">
-            <h1>Sistem Informasi Mahasiswa</h1>
-        </header>
-    </div>
-@endsection --}}
-
-{{-- @section('sidebar')
-
-@endsection --}}
 
 @section('content')
-    {{-- <div class="container">
-        <!-- Display student data if available -->
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Perubahan Jadwal Kuliah</h5>
-                <p class="card-text">untuk saat ini, tidak ada pengumuman Perubahan Jadwal Kuliah.</p>
-            </div>
-        </div>
-    </div> --}}
     <div class="container-fluid"style="padding-bottom:4vh;padding-left:0;padding-right:0;">
         <div class="card">
             <div class="container-fluid p-0 align-items-left"style="border-bottom: 0.5vh solid #fff;margin-bottom:2vh;">
@@ -84,7 +62,6 @@
                             <h5 class="file-link" style="cursor: pointer;" data-file="{{ $importantFile->isi_file }}">{{ $importantFile->nama_file }}</h5>
                         </div>
                         @endforeach
-                        {{ $announcements->onEachSide(1)->links('pagination.ImportantFile_pagination') }}
                     </div>
                 </div>
             </section>

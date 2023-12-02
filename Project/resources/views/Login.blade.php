@@ -1,12 +1,3 @@
-@section('pesansponsor')
-    @if (Session::has('pesansukses'))
-        @if (Session::get('tipe') == 'sukses')
-            <div class="alert alert-success">{{ Session::get('pesansukses') }}</div>
-        @else
-            <div class="alert alert-danger">{{ Session::get('pesansukses') }}</div>
-        @endif
-    @endif
-@endsection
 <!doctype html>
 <html lang="en">
 
@@ -73,7 +64,11 @@
                 <div class="col-md-6">
                     <div class="container p-2">
                         <h1 style="font-weight: bold">Sistem Informasi Mahasiswa</h1>
-                        @yield('pesansponsor')
+                        @if (Session::has('error'))
+                            <div class="alert alert-danger mt-3">
+                                {{ Session::get('error') }}
+                            </div>
+                        @endif
                         <form action="{{ route('LoginForm') }}" method="POST">
                             @csrf
                             <div class="form-group pt-2">

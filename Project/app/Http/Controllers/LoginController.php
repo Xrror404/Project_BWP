@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Cookie;
 use App\Models\Mahasiswa;
+use Illuminate\Support\Facades\Session;
+
 class LoginController extends Controller
 {
     public function ToLogin(Request $request)
@@ -24,39 +26,32 @@ class LoginController extends Controller
         $inputContainsSQL = $this->containsSQL($validatedData['Username']) || $this->containsSQL($validatedData['password']);
 
         if ($inputContainsSQL) {
-            return redirect('Login')->with([
-                "pesansukses" => "Input contains SQL keywords. Login failed.",
-                "tipe" => "gagal"
-            ]);
+            Session::flash('error', 'Inputan Mengandung SQL!');
+            return redirect('Login');
         }
 
         $Username = $validatedData['Username'];
         $Password = $validatedData['password'];
         $isValid = false;
 
-        $daftarMhs = DB::connection("KoneksiDatabase")
-            ->table("user")
-            ->where('user_username', $Username)
+        $mahasiswa = Mahasiswa::where('user_username', $Username)
             ->where('user_password', $Password)
-            ->get();
+            ->first();
 
-        // Check if the provided credentials are valid (without hashing the password)
-        foreach ($daftarMhs as $Mahasiswa) {
-            if ($Mahasiswa->user_username === $Username && $Mahasiswa->user_password === $Password) {
-                $isValid = true;
-                break;
-            }
+        if ($mahasiswa) {
+            $isValid = true;
+        } else {
+            $isValid = false;
         }
+
         $mahasiswa = Mahasiswa::getByNrp($Username);
         $cookie = Cookie::make('mahasiswa', json_encode($mahasiswa), 300);
-        // Redirect based on validation and SQL injection check result
         if ($isValid) {
             return redirect('Home')->with('Username', $Username)->withCookie($cookie);
-        } else {
-            return redirect('Login')->with([
-                "pesansukses" => "Gagal Login. Salah Password",
-                "tipe" => "gagal"
-            ]);
+        } 
+        else {
+            Session::flash('error', 'Username Atau Password Anda Salah');
+            return redirect('Login');
         }
     }
 
