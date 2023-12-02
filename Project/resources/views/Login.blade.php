@@ -16,7 +16,8 @@
     <title>Login</title>
     <link rel="icon" href="../Assets/logoistts.png" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
@@ -66,26 +67,25 @@
         <div class="container-fluid pt-3">
             <div class="row pl-3">
                 <div class="col-md-6">
-                    <img src="../Assets/ImgLogin.svg" class="img-fluid pl-3 pr-2" alt="" srcset="" id="loginImage">
+                    <img src="../Assets/ImgLogin.svg" class="img-fluid pl-3 pr-2" alt="" srcset=""
+                        id="loginImage">
                 </div>
                 <div class="col-md-6">
                     <div class="container p-2">
-                        <h1>Sistem Informasi Mahasiswa</h1>
+                        <h1 style="font-weight: bold">Sistem Informasi Mahasiswa</h1>
                         @yield('pesansponsor')
                         <form action="{{ route('LoginForm') }}" method="POST">
                             @csrf
                             <div class="form-group pt-2">
                                 <label for="Username"><b>Username</b></label>
                                 <input type="text" name="Username" id="Username" placeholder="Username"
-                                    style="width:100%;height:3em;">
+                                    class="form-control">
                             </div>
                             <div class="form-group pt-2">
                                 <p class="p-0"><b>Password</b></p>
                                 <div class="password-container">
-                                    <input type="password" id="password" name="password"
-                                        style="width: calc(100% - 2.5em); height: 3em;" placeholder="Password" required>
-                                    <span class="show-password" onclick="togglePassword()"
-                                        style="position: absolute; right: 0.5em; top: 50%; transform: translateY(-50%); cursor: pointer;">👁️</span>
+                                    <input class="form-control" type="password" id="password" name="password"
+                                        placeholder="Password" required>
                                 </div>
                             </div>
                             <div class="form-group pt-2">

@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\PoinController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +24,10 @@ Route::prefix('/Login')->group(function () {
 });
 Route::get('/Home', [HomeController::class, 'RedirectTo'])->name('home');
 
-Route::get('/point',[PoinController::class,'RedirectTo'])->name('point');
+use App\Http\Controllers\PoinController;
+
+Route::get('/point', [PoinController::class, 'index'])->name('point');
+
 Route::get('/info', function () {
     return view('info');
 })->name('info');

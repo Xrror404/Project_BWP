@@ -186,7 +186,7 @@
     </style>
 </head>
 
-<body class="bg-dark p-0">
+<body class="bg-black p-0">
     <div class="row p-0">
         <div class="col-md-2 pt-0">
             <div class="sidebar p-0 bg-dark">
@@ -235,6 +235,8 @@
                                 <button class="text-black h4" onclick="redirectToHome()">Beranda</button>
                                 <button id="pointButton" class="text-black h4"
                                     onclick="redirectToPoint()">Point</button>
+                                {{-- <a href="{{ route('poin.index', ['id_user' => $id_user]) }}">Ke halaman poin</a> --}}
+
                                 <button class="text-black h4" onclick="toggleInfo('info3', event)">Akademik</button>
                                 <div class="additional-info" id="info3">
                                     <button class="text-black h4" onclick="redirectToInfo()">Informasi Mata</button>
@@ -275,10 +277,10 @@
         </div>
         <div class="col-md-10 p-0">
             <div class="container-fluid m-0 p-0">
-                    <div class="container-fluid" id="headerContainer">
-                        <img src="../Assets/logoistts.png" alt="" style="height: 2vw; height: 6vh;">
-                        <h1 class="ms-3 mb-0">Sistem Informasi Mahasiswa</h1>
-                    </div>            
+                <div class="container-fluid" id="headerContainer">
+                    <img src="../Assets/logoistts.png" alt="" style="height: 2vw; height: 6vh;">
+                    <h1 class="ms-3 mb-0">Sistem Informasi Mahasiswa</h1>
+                </div>
                 <div class="content bg-dark pb-0">
                     @yield('content')
                 </div>
@@ -342,7 +344,7 @@
         }
 
         function redirectToPoint() {
-            window.location.href = '{{route('point')}}';
+            window.location.href = '{{ route('point') }}';
         }
 
         function redirectToInfo() {

@@ -36,7 +36,7 @@ CREATE TABLE pengumuman (
     pengumuman_added_date DATE
 );
 
-CREATE TABLE poin (
+CREATE TABLE poins (
     id_acara CHAR(6) PRIMARY KEY,
     nama_acara VARCHAR(255),
     tipe_acara SMALLINT,
@@ -82,7 +82,7 @@ CREATE TABLE penerima_poin (
     id_penerima VARCHAR(10),
     id_acara CHAR(6),
     FOREIGN KEY (id_penerima) REFERENCES user(id_user),
-    FOREIGN KEY (id_acara) REFERENCES poin(id_acara)
+    FOREIGN KEY (id_acara) REFERENCES poins(id_acara)
 );
 
 INSERT INTO jurusan (id_jurusan, nama_jurusan)
@@ -292,7 +292,7 @@ VALUES
     ('PE0029', 'Sertifikat Tanda Lulus ECC Periode Genap 2022/2023 Siap Diambil', 'https://sim.istts.ac.id/pengumuman/2106/Sertifikat-Tanda-Lulus-ECC-Periode-Genap-2022-2023-Siap-Diambil', '2023-09-08'),
     ('PE0030', '[BAA] Penerbitan SK TA/Thesis Periode Agustus 2023', 'https://sim.istts.ac.id/pengumuman/2105/[BAA]-Penerbitan-SK-TA-Thesis-Periode-Agustus-2023', '2023-09-08');
 
-INSERT INTO poin (id_acara, nama_acara, tipe_acara, jml_poin, poin_added_date)
+INSERT INTO poins (id_acara, nama_acara, tipe_acara, jml_poin, poin_added_date)
 VALUES
     ('MB0001', 'PESERTA UKM BADMINTON GASAL 2022/2023', 0, 200, '2022-08-01'),
     ('MB0002', 'PESERTA UKM BADMINTON GENAP 2022/2023', 0, 200, '2023-02-01'),
@@ -312,6 +312,7 @@ VALUES
     ('KR0001', 'PESERTA UKK KRISTEN PD STTS 2021/2022', 3, 26, '2022-02-01'),
     ('KR0002', 'PESERTA WELCOME PARTY PERSEKUTUAN DOA ISTTS 2022', 3, 62, '2022-09-16'),
     ('KR0003', 'PESERTA RETRET PERSEKUTUAN DOA ISTTS 2022', 3, 100,'2022-12-02');
+
 
 INSERT INTO matkul_diambil_mhs (id_matkul_diambil_mhs, id_matkul, id_user)
 VALUES

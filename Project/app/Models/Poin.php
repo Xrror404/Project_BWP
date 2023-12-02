@@ -8,12 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Poin extends Model
 {
     use HasFactory;
-    protected $table = 'poin'; 
 
     protected $primaryKey = 'id_acara';
 
     public function penerimaPoin()
     {
-        return $this->hasMany(PenerimaPoin::class);
+        return $this->hasMany(PenerimaPoin::class, 'id_acara', 'id_acara');
     }
 }
