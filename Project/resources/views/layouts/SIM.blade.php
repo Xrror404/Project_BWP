@@ -192,10 +192,8 @@
             <div class="sidebar p-0 bg-dark">
                 <div class="container-fluid p-0">
                     @php
-                        $mahasiswaCookie = json_decode(request()->cookie('mahasiswa'));
-                        // Menampilkan data mahasiswa
-                        $namaMhs = $mahasiswaCookie->nama_user ?? 'KOSONG';
-                        $nrpMhs = $mahasiswaCookie->user_username ?? 'KOSONG';
+                        $namaMhs = session('nama_user');
+                        $nrpMhs = session('user_username');
                     @endphp
 
                     <div class="card p-0" style="width: auto;"id="UserCard">
