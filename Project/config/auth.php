@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'satpam_dosen' => [
+            'driver' => 'session',
+            'provider' => 'dosen'
+        ]
     ],
 
     /*
@@ -62,7 +66,11 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\Mahasiswa::class,
+        ],
+        'dosen' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Dosen::class,
         ],
 
         // 'users' => [

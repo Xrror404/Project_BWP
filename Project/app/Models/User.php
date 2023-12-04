@@ -32,7 +32,9 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
-    protected $table = 'user'; 
+    protected $table = 'user';
+
+    protected $guard = 'web';
 
     protected $primaryKey = 'id_user';
     /**

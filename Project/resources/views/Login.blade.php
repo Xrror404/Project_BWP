@@ -64,15 +64,15 @@
                 <div class="col-md-6">
                     <div class="container p-2">
                         <h1 style="font-weight: bold">Sistem Informasi Mahasiswa</h1>
-                        @if (Session::has('error'))
+                        @if (session('error'))
                             <div class="alert alert-danger mt-3">
-                                {{ Session::get('error') }}
+                                {{ session('error') }}
                             </div>
                         @endif
-                        <form action="{{ route('LoginForm') }}" method="POST">
+                        <form action="{{ route('login.custom') }}" method="POST">
                             @csrf
                             <div class="form-group pt-2">
-                                <label for="Username"><b>Username</b></label>
+                                <p class="p-0"><b>Username</b></p>
                                 <input type="text" name="Username" id="Username" placeholder="Username"
                                     class="form-control">
                             </div>

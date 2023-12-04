@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Cookie;
 use App\Models\Mahasiswa;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
@@ -14,56 +16,52 @@ class LoginController extends Controller
     {
         return view('Login');
     }
-    public function AreUserExist(Request $request)
+
+    public function login(Request $request)
     {
-        // Validate the user input
-        $validatedData = $request->validate([
-            'Username' => 'required|string|max:255',
-            'password' => 'required|string|max:255',
-        ]);
+        // $request->validate([
+        //     'Username' => ['required', 'string'],
+        //     'password' => ['required', 'string'],
+        // ]);
 
-        // Check for SQL injection in the input
-        $inputContainsSQL = $this->containsSQL($validatedData['Username']) || $this->containsSQL($validatedData['password']);
+        // $username = $request->input('Username');
+        // $password = $request->input('password');
 
-        if ($inputContainsSQL) {
-            Session::flash('error', 'Inputan Mengandung SQL!');
-            return redirect('Login');
-        }
+        // $hashedPassword = Hash::make($request->input('user_password'));
 
-        $Username = $validatedData['Username'];
-        $Password = $validatedData['password'];
-        $isValid = false;
+        // if (Auth::attempt(['user_username' => $username, 'user_password' => $password])) {
+        //     return redirect()->route('home')->with('Username', $username);
+        // } else {
+        //     return redirect()->route('login')->with('error', 'Username or password is incorrect');
+        // }
 
-        $mahasiswa = Mahasiswa::where('user_username', $Username)
-            ->where('user_password', $Password)
-            ->first();
+        $credentials = [
+            "user_username" => $request->Username,
+            "password" => $request->password
+        ];
 
-        if ($mahasiswa) {
-            $isValid = true;
+        // $credentials = $request->only('user_username', 'password');
+
+        // $credentials['user_username'] = $credentials['Username'];
+        // $credentials['user_password'] = $credentials['password'];
+
+        if (Auth::attempt($credentials)) {
+            return redirect()->route('home')->with('Username', $request->input('Username'));
         } else {
-            $isValid = false;
-        }
-
-        $mahasiswa = Mahasiswa::getByNrp($Username);
-        $cookie = Cookie::make('mahasiswa', json_encode($mahasiswa), 300);
-        if ($isValid) {
-            return redirect('Home')->with('Username', $Username)->withCookie($cookie);
-        } 
-        else {
-            Session::flash('error', 'Username Atau Password Anda Salah');
-            return redirect('Login');
+            return redirect()->route('login')->with('error', 'Username or password is incorrect');
         }
     }
 
-    private function containsSQL($input)
-    {
-        $sqlKeywords = ['SELECT', 'INSERT', 'UPDATE', 'DELETE', 'FROM', 'WHERE', 'DROP', 'UNION', 'JOIN', 'AND', 'OR'];
-        foreach ($sqlKeywords as $keyword) {
-            if (str_contains(strtoupper($input), $keyword)) {
-                return true;
-            }
-        }
 
-        return false;
-    }
+    // private function containsSQL($input)
+    // {
+    //     $sqlKeywords = ['SELECT', 'INSERT', 'UPDATE', 'DELETE', 'FROM', 'WHERE', 'DROP', 'UNION', 'JOIN', 'AND', 'OR'];
+    //     foreach ($sqlKeywords as $keyword) {
+    //         if (str_contains(strtoupper($input), $keyword)) {
+    //             return true;
+    //         }
+    //     }
+
+    //     return false;
+    // }
 }

@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PoinController;
 use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,12 +21,17 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 Route::prefix('/Login')->group(function () {
-    Route::get('/', [LoginController::class, "ToLogin"])->name('login');
-    Route::post('/Verification', [LoginController::class, 'AreUserExist'])->name('LoginForm');
+    Route::get('/', [LoginController::class, 'ToLogin'])->name('login');
+    Route::post('/Verification', [LoginController::class, 'login'])->name('login.custom');
 });
-Route::get('/Home', [HomeController::class, 'RedirectTo'])->name('home');
 
-use App\Http\Controllers\PoinController;
+// Protected routes using middleware
+Route::middleware('auth.custom')->group(function () {
+    Route::get('/Home', [HomeController::class, 'index'])->name('home');
+    // Other authenticated routes
+});
+
+Route::get('/Home', [HomeController::class, 'RedirectTo'])->name('home');
 
 Route::get('/point', [PoinController::class, 'index'])->name('point');
 
