@@ -243,7 +243,7 @@
                                             aria-labelledby="dropdownMenuButton" id="DropDownButton">
                                             <button class="dropdown-item" type="button">Biodata</button>
                                             <button class="dropdown-item" type="button"
-                                                onclick="redirectToLogin()">Logout</button>
+                                                onclick="confirmLogout()">Logout</button>
                                         </div>
                                     </div>
 
@@ -346,6 +346,10 @@
 <script>
     function handleButtonClick(event) {
         event.preventDefault();
+    }
+
+    function confirmLogout() {
+        window.location.href = '{{ route('logout') }}';
     }
 
     function toggleInfo(infoId) {

@@ -24,6 +24,7 @@ Route::prefix('/Login')->group(function () {
     Route::get('/', [LoginController::class, 'ToLogin'])->name('login');
     Route::post('/Verification', [LoginController::class, 'login'])->name('login.custom');
 });
+Route::get('/logout', [HomeController::class, 'logout'])->name('logout');
 
 Route::middleware('auth.custom')->group(function () {
     Route::get('/Home', [HomeController::class, 'index'])->name('home');
