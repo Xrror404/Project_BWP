@@ -19,34 +19,27 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        // $request->validate([
-        //     'Username' => ['required', 'string'],
-        //     'password' => ['required', 'string'],
-        // ]);
-
-        // $username = $request->input('Username');
-        // $password = $request->input('password');
-
-        // $hashedPassword = Hash::make($request->input('user_password'));
-
-        // if (Auth::attempt(['user_username' => $username, 'user_password' => $password])) {
-        //     return redirect()->route('home')->with('Username', $username);
-        // } else {
-        //     return redirect()->route('login')->with('error', 'Username or password is incorrect');
-        // }
-
         $credentials = [
             "user_username" => $request->Username,
             "password" => $request->password
         ];
 
-        // $credentials = $request->only('user_username', 'password');
-
-        // $credentials['user_username'] = $credentials['Username'];
-        // $credentials['user_password'] = $credentials['password'];
-
         if (Auth::attempt($credentials)) {
-            return redirect()->route('home')->with('Username', $request->input('Username'));
+            // Retrieve the authenticated user
+            $authenticatedUser = Auth::user();
+
+            if ($authenticatedUser) {
+                $namaUser = $authenticatedUser->nama_user;
+                $userUsername = $authenticatedUser->user_username;
+                $mahasiswaData = [
+                    'nama_user' => $namaUser,
+                    'user_username' => $userUsername,
+                ];
+                $cookie = Cookie::make('mahasiswa', json_encode($mahasiswaData), 300);
+                return redirect('Home')->withCookie($cookie);
+            } else {
+                return redirect()->route('login')->with('error', 'Failed to retrieve user details');
+            }
         } else {
             return redirect()->route('login')->with('error', 'Username or password is incorrect');
         }

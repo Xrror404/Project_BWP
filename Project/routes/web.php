@@ -25,55 +25,51 @@ Route::prefix('/Login')->group(function () {
     Route::post('/Verification', [LoginController::class, 'login'])->name('login.custom');
 });
 
-// Protected routes using middleware
 Route::middleware('auth.custom')->group(function () {
     Route::get('/Home', [HomeController::class, 'index'])->name('home');
-    // Other authenticated routes
+    Route::get('/Home', [HomeController::class, 'RedirectTo'])->name('home');
+    Route::get('/point', [PoinController::class, 'index'])->name('point');
+
+    Route::get('/info', function () {
+        return view('info');
+    })->name('info');
+    Route::get('/laporan nilai', function () {
+        return view('laporan');
+    })->name('laporan');
+    Route::get('/info', function () {
+        return view('info');
+    })->name('info');
+    Route::get('/laporan', function () {
+        return view('laporan');
+    })->name('laporan');
+    Route::get('/transkip', function () {
+        return view('transkip');
+    })->name('transkip');
+    Route::get('/grafik', function () {
+        return view('grafik');
+    })->name('grafik');
+    Route::get('/jadwal kuliah', function () {
+        return view('jkuliah');
+    })->name('jkuliah');
+    Route::get('/jadwal ujian', function () {
+        return view('jujian');
+    })->name('jujian');
+    Route::get('/jadwal dosen', function () {
+        return view('jdosen');
+    })->name('jdosen');
+    Route::get('/batal tambah', function () {
+        return view('batal');
+    })->name('batal');
+    Route::get('/pengisian FRS', function () {
+        return view('frs');
+    })->name('frs');
+    Route::get('/drop', function () {
+        return view('drop');
+    })->name('drop');
+    Route::get('/download krs', function () {
+        return view('krs');
+    })->name('krs');
+    Route::get('/TA/Tesis', function () {
+        return view('ta');
+    })->name('ta');
 });
-
-Route::get('/Home', [HomeController::class, 'RedirectTo'])->name('home');
-
-Route::get('/point', [PoinController::class, 'index'])->name('point');
-
-Route::get('/info', function () {
-    return view('info');
-})->name('info');
-Route::get('/laporan nilai', function () {
-    return view('laporan');
-})->name('laporan');
-Route::get('/info', function () {
-    return view('info');
-})->name('info');
-Route::get('/laporan', function () {
-    return view('laporan');
-})->name('laporan');
-Route::get('/transkip', function () {
-    return view('transkip');
-})->name('transkip');
-Route::get('/grafik', function () {
-    return view('grafik');
-})->name('grafik');
-Route::get('/jadwal kuliah', function () {
-    return view('jkuliah');
-})->name('jkuliah');
-Route::get('/jadwal ujian', function () {
-    return view('jujian');
-})->name('jujian');
-Route::get('/jadwal dosen', function () {
-    return view('jdosen');
-})->name('jdosen');
-Route::get('/batal tambah', function () {
-    return view('batal');
-})->name('batal');
-Route::get('/pengisian FRS', function () {
-    return view('frs');
-})->name('frs');
-Route::get('/drop', function () {
-    return view('drop');
-})->name('drop');
-Route::get('/donwnload krs', function () {
-    return view('krs');
-})->name('krs');
-Route::get('/TA/Tesis', function () {
-    return view('ta');
-})->name('ta');
