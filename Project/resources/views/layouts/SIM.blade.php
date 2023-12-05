@@ -188,12 +188,24 @@
 
 <body class="bg-black p-0">
     <div class="row p-0">
-        <div class="col-md-2 pt-0">
+        <div class="col-lg-2 pt-0">
             <div class="sidebar p-0 bg-dark">
-                <div class="container-fluid p-0">
+                <div class="container p-0">
                     @php
+                        // Mengambil nilai 'nama_user' dari session
                         $namaMhs = session('nama_user');
+
+                        // Mengambil nilai 'user_username' dari session
                         $nrpMhs = session('user_username');
+
+                        // Jika nilai tidak ditemukan dalam session, coba ambil dari cookie 'mahasiswa'
+                        if (empty($namaMhs) || empty($nrpMhs)) {
+                            $mahasiswaCookie = json_decode(request()->cookie('mahasiswa'), true);
+
+                            // Mengambil nilai dari cookie jika ada
+                            $namaMhs = $mahasiswaCookie['nama_user'] ?? null;
+                            $nrpMhs = $mahasiswaCookie['user_username'] ?? null;
+                        }
                     @endphp
 
                     <div class="card p-0" style="width: auto;"id="UserCard">
@@ -208,7 +220,7 @@
                                 <div class="dropdown">
                                     <span style="cursor: pointer;" id="dropdownMenuButton" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">
-                                        &#9660; <!-- Tombol arrow ke bawah -->
+                                        &#9660;
                                     </span>
                                     <div class="dropdown-menu bg-light dropdown-menu-right"
                                         aria-labelledby="dropdownMenuButton" id="DropDownButton">
@@ -236,7 +248,6 @@
                                 <button class="text-black h4" onclick="redirectToHome()">Beranda</button>
                                 <button id="pointButton" class="text-black h4"
                                     onclick="redirectToPoint()">Point</button>
-                                {{-- <a href="{{ route('poin.index', ['id_user' => $id_user]) }}">Ke halaman poin</a> --}}
 
                                 <button class="text-black h4" onclick="toggleInfo('info3', event)">Akademik</button>
                                 <div class="additional-info" id="info3">
@@ -270,19 +281,17 @@
                                     Dosen</button>
                             </div>
                         </div>
-
-
                     </div>
                 </nav>
             </div>
         </div>
-        <div class="col-md-10 p-0">
+        <div class="col-lg-10 p-0">
             <div class="container-fluid m-0 p-0">
                 <div class="container-fluid" id="headerContainer">
-                    <img src="../Assets/logoistts.png" alt="" style="height: 2vw; height: 6vh;">
+                    <img src="../Assets/logoistts.png" alt="" style="height: 6vh;">
                     <h1 class="ms-3 mb-0">Sistem Informasi Mahasiswa</h1>
                 </div>
-                <div class="content bg-dark pb-0">
+                <div class="content bg-dark"style="padding:3vh 2vw;">
                     @yield('content')
                 </div>
                 <footer class="mt-5"style="background-color: #1E0A0A; color: white; padding: 20px;">
