@@ -10,17 +10,19 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Tanggal</th>
-                            <th scope="col">Kegiatan</th>
-                            <th scope="col">Poin</th>
+                            <th scope="col" style="background-color: black; color: white;">Tanggal</th>
+                            <th scope="col" style="background-color: black; color: white;">Kegiatan</th>
+                            <th scope="col" style="background-color: black; color: white;">Poin</th>
                         </tr>
                     </thead>
                     <tbody>
                         @forelse($poinUser as $poin)
                             <tr>
-                                <td>{{ $poin->poin->poin_added_date ?? 'N/A' }}</td>
-                                <td>{{ $poin->poin->nama_acara ?? 'N/A' }}</td>
-                                <td>{{ $poin->poin->jml_poin ?? 'N/A' }}</td>
+                                <td style="background-color: black; color: white;">
+                                    {{ $poin->poin->poin_added_date ?? 'N/A' }}</td>
+                                <td style="background-color: black; color: white;">{{ $poin->poin->nama_acara ?? 'N/A' }}
+                                </td>
+                                <td style="background-color: black; color: white;">{{ $poin->poin->jml_poin ?? 'N/A' }}</td>
                             </tr>
                         @empty
                             <tr>
