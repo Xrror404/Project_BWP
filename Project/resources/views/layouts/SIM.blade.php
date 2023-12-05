@@ -218,6 +218,15 @@
             background-color: #2980b9;
             /* Warna latar belakang saat hover */
         }
+
+        body {
+            transition: background-color 0.3s ease;
+        }
+
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -279,6 +288,8 @@
                                 aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
+
+
                             <br>
                             <br>
                             <div class="collapse" id="navbarToggleExternalContent">
@@ -289,9 +300,11 @@
 
                                     <button class="text-black h4" onclick="toggleInfo('info3', event)">Akademik</button>
                                     <div class="additional-info" id="info3">
-                                        <button class="text-black h4" onclick="redirectToInfo()">Informasi Mata</button>
+                                        <button class="text-black h4" onclick="redirectToInfo()">Informasi
+                                            Mata</button>
                                         <button class="text-black h4" onclick="laporan()">laporan Nilai</button>
-                                        <button class="text-black h4" onclick="transkip()">Transkip Nilai</button>
+                                        <button class="text-black h4" onclick="transkip()">Transkip
+                                            Nilai</button>
                                         <button class="text-black h4" onclick="grafik()">Grafik</button>
                                     </div>
                                     <button class="text-black h4" onclick="toggleInfo('info4', event)">Jadwal</button>
@@ -303,20 +316,21 @@
                                     <button class="text-black h4" onclick="toggleInfo('info5', event)">Rencana
                                         Studi</button>
                                     <div class="additional-info" id="info5">
-                                        <button class="text-black h4" onclick="frs()">Pengisian FRS</button><button
-                                            class="text-black h4" onclick="batal()">Batal Tambah</button>
+                                        <button class="text-black h4" onclick="frs()">Pengisian
+                                            FRS</button><button class="text-black h4" onclick="batal()">Batal
+                                            Tambah</button>
                                         <button class="text-black h4" onclick="drop()">Drop</button>
                                         <button class="text-black h4" onclick="krs()">Download KRS</button>
                                     </div>
-                                    <button class="text-black h4" onclick="toggleInfo('info6', event)">Laporan
+                                    <button class="text-black h4" onclick="luang('info6', event)">Laporan
                                         Keuangan</button>
                                     <button class="text-black h4" onclick="toggleInfo('info7', event)">TA/Tesis</button>
                                     <div class="additional-info" id="info7">
                                         <button class="text-black h4" onclick="ta()">History TA/Tesis</button>
                                     </div>
                                     <button class="text-black h4"
-                                        onclick="toggleInfo('info8', event)">Pengaturan</button>
-                                    <button class="text-black h4" onclick="toggleInfo('info9', event)">Kontak
+                                        onclick="pengaturan('info8', event)">Pengaturan</button>
+                                    <button class="text-black h4" onclick="kdosen('info9', event)">Kontak
                                         Dosen</button>
                                 </div>
                             </div>
@@ -443,6 +457,18 @@
 
     function ta() {
         window.location.href = '{{ route('ta') }}';
+    }
+
+    function kdosen() {
+        window.location.href = '{{ route('kdosen') }}';
+    }
+
+    function luang() {
+        window.location.href = '{{ route('luang') }}';
+    }
+
+    function pengaturan() {
+        window.location.href = '{{ route('pengaturan') }}';
     }
 </script>
 
