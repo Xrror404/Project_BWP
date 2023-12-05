@@ -183,6 +183,26 @@
         h3 {
             color: #fff;
         }
+
+        .btn-custom {
+            background-color: #3498db;
+            /* Warna latar belakang */
+            color: #ffffff;
+            /* Warna teks */
+            border: 1px solid #2980b9;
+            /* Warna border */
+            border-radius: 5px;
+            /* Sudut border */
+            margin: 5px;
+            /* Jarak antar tombol */
+            transition: background-color 0.3s ease;
+            /* Efek transisi hover */
+        }
+
+        .btn-custom:hover {
+            background-color: #2980b9;
+            /* Warna latar belakang saat hover */
+        }
     </style>
 </head>
 
