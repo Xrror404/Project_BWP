@@ -6,42 +6,35 @@
             <!-- Your existing content -->
 
             <div class="container">
-                <h2 class="text-light">Point Seluruh</h2>
+                <h2 class="text-light">Point {{ $user->user_username }}</h2>
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col" style="background-color: black; color: white;">Tanggal</th>
-                            <th scope="col" style="background-color: black; color: white;">Kegiatan</th>
-                            <th scope="col" style="background-color: black; color: white;">Poin</th>
+                            <th scope="col">Tanggal</th>
+                            <th scope="col">Kegiatan</th>
+                            <th scope="col">Poin</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse($poinUser as $poin)
+                        {{-- @dd($poinAll->Orang) --}}
+                        {{-- Ini percobaan yang masih belum sempurna V --}}
+                        @foreach ($poinAll as $poin)
                             <tr>
-                                <td style="background-color: black; color: white;">
-                                    {{ $poin->poin->poin_added_date ?? 'N/A' }}</td>
-                                <td style="background-color: black; color: white;">{{ $poin->poin->nama_acara ?? 'N/A' }}
-                                </td>
-                                <td style="background-color: black; color: white;">{{ $poin->poin->jml_poin ?? 'N/A' }}</td>
+                                <td>{{ $poin->poin_added_date ?? 'N/A' }}</td>
+                                <td>{{ $poin->nama_acara ?? 'N/A' }}</td>
+                                <td>{{ $poin->jml_poin ?? 'N/A' }}</td>
                             </tr>
-                        @empty
+                        @endforeach
+                        {{-- ini Yang Seharusnya V --}}
+                        {{-- @foreach ($poinAll->Orang as $poin)
                             <tr>
-                                <td colspan="3">No data available</td>
+                                <td>{{ $poin->poin_added_date ?? 'N/A' }}</td>
+                                <td>{{ $poin->nama_acara ?? 'N/A' }}</td>
+                                <td>{{ $poin->jml_poin ?? 'N/A' }}</td>
                             </tr>
-                        @endforelse
-
+                        @endforeach --}}
                     </tbody>
                 </table>
-                <!-- Tambahkan ini sebelum loop untuk debugging -->
-                {{-- dd($poinUser) --}}
-                {{-- @foreach ($poinUser as $penerimaPoin)
-                    @if ($penerimaPoin->poin)
-                        <p>Tanggal: {{ $penerimaPoin->poin->poin_added_date }}</p>
-                        <p>Kegiatan: {{ $penerimaPoin->poin->nama_acara }}</p>
-                        <p>Poin: {{ $penerimaPoin->poin->jml_poin }}</p>
-                        <hr>
-                    @endif
-                @endforeach --}}
 
             </div>
         </div>

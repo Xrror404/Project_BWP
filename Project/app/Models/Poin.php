@@ -9,10 +9,14 @@ class Poin extends Model
 {
     use HasFactory;
 
+    protected $connection = "KoneksiDatabase";
+    protected $table = 'poins';
     protected $primaryKey = 'id_acara';
+    public $incrementing = false;
+    public $timestamps = true;
 
-    public function penerimaPoin()
+    public function Orang()
     {
-        return $this->hasMany(PenerimaPoin::class, 'id_acara', 'id_acara');
+        return $this->belongstoMany(User::class, 'penerima_poin', 'id_acara', 'id_penerima');
     }
 }
