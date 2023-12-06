@@ -17,6 +17,10 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $connection = "KoneksiDatabase";
+    protected $table = 'user';
+    public $incrementing = false;
+    public $timestamps = false;
     protected $fillable = [
         'name',
         'email',
@@ -32,9 +36,6 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
-    protected $table = 'user';
-
-    protected $guard = 'web';
 
     protected $primaryKey = 'id_user';
     /**
@@ -46,8 +47,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-    public function penerimaPoin()
+
+    public function Poins()
     {
-        return $this->hasMany(PenerimaPoin::class);
+        return $this->belongsToMany(Poin::class, 'penerima_poin', 'id_penerima', 'id_acara');
     }
 }
