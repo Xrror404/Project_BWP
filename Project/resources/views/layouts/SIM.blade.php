@@ -233,11 +233,8 @@
 
                             // Mengambil nilai 'user_username' dari session
                             $nrpMhs = session('user_username');
-
-                            // Jika nilai tidak ditemukan dalam session, coba ambil dari cookie 'mahasiswa'
                             if (empty($namaMhs) || empty($nrpMhs)) {
                                 $mahasiswaCookie = json_decode(request()->cookie('mahasiswa'), true);
-
                                 // Mengambil nilai dari cookie jika ada
                                 $namaMhs = $mahasiswaCookie['nama_user'] ?? null;
                                 $nrpMhs = $mahasiswaCookie['user_username'] ?? null;
@@ -263,7 +260,7 @@
                                             aria-labelledby="dropdownMenuButton" id="DropDownButton">
                                             <button class="dropdown-item" type="button">Biodata</button>
                                             <button class="dropdown-item" type="button"
-                                                onclick="confirmLogout()">Logout</button>
+                                                onclick="logoutMethod()">Logout</button>
                                         </div>
                                     </div>
 
@@ -368,7 +365,7 @@
         event.preventDefault();
     }
 
-    function confirmLogout() {
+    function logoutMethod() {
         window.location.href = '{{ route('logout') }}';
     }
 
