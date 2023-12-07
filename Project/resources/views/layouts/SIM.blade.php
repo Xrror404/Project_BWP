@@ -296,7 +296,8 @@
                                     </div>
                                     <button class="text-black h4" onclick="toggleInfo('info4', event)">Jadwal</button>
                                     <div class="additional-info" id="info4">
-                                        <button class="text-black h4" onclick="jkuliah()">Jadwal Kuliah</button>
+                                        <button class="text-black h4" onclick="jkuliah()">YANG BIKIN PAGE INI TAK
+                                            PERKOSA LO KAMU</button>
                                         <button class="text-black h4" onclick="jujian()">Jadwal Ujian</button>
                                         <button class="text-black h4" onclick="jdosen()">Jadwal Dosen</button>
                                     </div>
