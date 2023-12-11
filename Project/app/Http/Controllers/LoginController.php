@@ -31,12 +31,21 @@ class LoginController extends Controller
             if ($authenticatedUser) {
                 $namaUser = $authenticatedUser->nama_user;
                 $userUsername = $authenticatedUser->user_username;
-                $mahasiswaData = [
-                    'nama_user' => $namaUser,
-                    'user_username' => $userUsername,
-                ];
-                $cookie = Cookie::make('mahasiswa', json_encode($mahasiswaData), 300);
-                return redirect('Home')->withCookie($cookie);
+                $roleUser = $authenticatedUser->role_user;
+                $jurusanMhs = $authenticatedUser->id_jurusan;
+                if ($roleUser == 0) {
+                    $mahasiswaData = [
+                        'nama_user' => $namaUser,
+                        'user_username' => $userUsername,
+                        'roleUser' => $roleUser,
+                        'jurusanMhs' => $jurusanMhs
+                    ];
+                    $cookie = Cookie::make('mahasiswa', json_encode($mahasiswaData), 300);
+                    return redirect('Home')->withCookie($cookie);
+                }else{
+                    // nanti yang buat form dosen ini buat login ke form dosen kalau role nya 2 ya
+                    return redirect()->route('login')->with('error','form dosen belom dibuat');
+                }
             } else {
                 return redirect()->route('login')->with('error', 'Failed to retrieve user details');
             }
@@ -44,17 +53,4 @@ class LoginController extends Controller
             return redirect()->route('login')->with('error', 'Username or password is incorrect');
         }
     }
-
-
-    // private function containsSQL($input)
-    // {
-    //     $sqlKeywords = ['SELECT', 'INSERT', 'UPDATE', 'DELETE', 'FROM', 'WHERE', 'DROP', 'UNION', 'JOIN', 'AND', 'OR'];
-    //     foreach ($sqlKeywords as $keyword) {
-    //         if (str_contains(strtoupper($input), $keyword)) {
-    //             return true;
-    //         }
-    //     }
-
-    //     return false;
-    // }
 }

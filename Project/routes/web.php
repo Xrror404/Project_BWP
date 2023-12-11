@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\informasiMata;
+use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PoinController;
 use Illuminate\Support\Facades\Route;
@@ -27,7 +29,6 @@ Route::prefix('/Login')->group(function () {
 Route::get('/logout', [HomeController::class, 'logout'])->name('logout');
 
 Route::middleware('auth.custom')->group(function () {
-    Route::get('/Home', [HomeController::class, 'index'])->name('home');
     Route::get('/Home', [HomeController::class, 'RedirectTo'])->name('home');
     Route::get('/point', [PoinController::class, 'index'])->name('point');
 
@@ -37,9 +38,7 @@ Route::middleware('auth.custom')->group(function () {
     Route::get('/laporan nilai', function () {
         return view('laporan');
     })->name('laporan');
-    Route::get('/info', function () {
-        return view('info');
-    })->name('info');
+    Route::get('/info', [informasiMata::class, 'getMatkulandredirect'])->name('info');
     Route::get('/laporan', function () {
         return view('laporan');
     })->name('laporan');
@@ -49,9 +48,7 @@ Route::middleware('auth.custom')->group(function () {
     Route::get('/grafik', function () {
         return view('grafik');
     })->name('grafik');
-    Route::get('/jadwal kuliah', function () {
-        return view('jkuliah');
-    })->name('jkuliah');
+    Route::get('/jkuliah', [JadwalController::class, 'redirectToPage'])->name('jkuliah');
     Route::get('/jadwal ujian', function () {
         return view('jujian');
     })->name('jujian');
