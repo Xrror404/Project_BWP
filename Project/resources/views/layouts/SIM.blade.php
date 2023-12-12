@@ -242,11 +242,8 @@
 
                             // Mengambil nilai 'user_username' dari session
                             $nrpMhs = session('user_username');
-
-                            // Jika nilai tidak ditemukan dalam session, coba ambil dari cookie 'mahasiswa'
                             if (empty($namaMhs) || empty($nrpMhs)) {
                                 $mahasiswaCookie = json_decode(request()->cookie('mahasiswa'), true);
-
                                 // Mengambil nilai dari cookie jika ada
                                 $namaMhs = $mahasiswaCookie['nama_user'] ?? null;
                                 $nrpMhs = $mahasiswaCookie['user_username'] ?? null;
@@ -272,7 +269,7 @@
                                             aria-labelledby="dropdownMenuButton" id="DropDownButton">
                                             <button class="dropdown-item" type="button">Biodata</button>
                                             <button class="dropdown-item" type="button"
-                                                onclick="redirectToLogin()">Logout</button>
+                                                onclick="logoutMethod()">Logout</button>
                                         </div>
                                     </div>
 
@@ -309,7 +306,8 @@
                                     </div>
                                     <button class="text-black h4" onclick="toggleInfo('info4', event)">Jadwal</button>
                                     <div class="additional-info" id="info4">
-                                        <button class="text-black h4" onclick="jkuliah()">Jadwal Kuliah</button>
+                                        <button class="text-black h4" onclick="jkuliah()">YANG BIKIN PAGE INI TAK
+                                            PERKOSA LO KAMU</button>
                                         <button class="text-black h4" onclick="jujian()">Jadwal Ujian</button>
                                         <button class="text-black h4" onclick="jdosen()">Jadwal Dosen</button>
                                     </div>
@@ -380,6 +378,10 @@
 <script>
     function handleButtonClick(event) {
         event.preventDefault();
+    }
+
+    function logoutMethod() {
+        window.location.href = '{{ route('logout') }}';
     }
 
     function toggleInfo(infoId) {

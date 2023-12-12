@@ -5,21 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Poin;
 use App\Models\PenerimaPoin;
+use App\Models\User;
 
 class PoinController extends Controller
 {
-    public function index($id_user = null)
+    public function index(Request $request)
     {
-        if ($id_user) {
-            $poinUser = PenerimaPoin::where('id_penerima', $id_user)
-                ->with('poin')
-                ->get();
-        } else {
-            // If $id_user is not provided, you might want to retrieve all records or handle it accordingly.
-            $poinUser = PenerimaPoin::with('poin')->get();
-        }
-
+        // $poinAll = Poin::all()->first();
+        // yang seharusnya seperti yang atas ^ bukan yang V
+        $poinAll = Poin::all();
+        // dd($poin->Orang);
+        $user = User::find('MHSINF0003');
         // Adjust the view name to 'Point'
-        return view('Point', compact('poinUser'));
+        return view('point', compact('poinAll', 'user'));
     }
 }
