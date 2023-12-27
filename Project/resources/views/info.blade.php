@@ -1,20 +1,4 @@
 @extends('layouts.SIM')
-
-
-{{-- @section('header')
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <img src="../Assets/logoistts.png" alt="" style="height: 2vw; height: 2vw">
-            <h1>Sistem Informasi Mahasiswa</h1>
-        </header>
-    </div>
-@endsection --}}
-
-{{-- @section('sidebar')
-
-@endsection --}}
-
 @section('content')
     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group me-2" role="group" aria-label="First group">
@@ -30,24 +14,27 @@
     </div>
     <div class="container">
         @if (count($jadwals) > 0)
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Nama Matkul</th>
-                        <th scope="col">Jumlah SKS</th>
-                        <th scope="col">Semester Mata Kuliah</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($jadwals as $jadwal)
+            @foreach ($jadwals->groupBy('sms_matkul') as $semester => $jadwals)
+                <h3>Semester {{ $semester }}</h3>
+                <table class="table">
+                    <thead>
                         <tr>
-                            <td>{{ $jadwal->nama_matkul }}</td>
-                            <td>{{ $jadwal->sks_matkul }}</td>
-                            <td>{{ $jadwal->sms_matkul }}</td>
+                            <th scope="col">Nama Matkul</th>
+                            <th scope="col">Jumlah SKS</th>
+                            <th scope="col">Semester Mata Kuliah</th>
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach ($jadwals as $jadwal)
+                            <tr>
+                                <td>{{ $jadwal->nama_matkul }}</td>
+                                <td>{{ $jadwal->sks_matkul }}</td>
+                                <td>{{ $jadwal->sms_matkul }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            @endforeach
         @else
             <p>Tidak ada jadwal kuliah.</p>
         @endif
