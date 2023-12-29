@@ -11,6 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
     <style>
         #headerContainer {
             background-color: #360000;
@@ -306,8 +307,7 @@
                                     </div>
                                     <button class="text-black h4" onclick="toggleInfo('info4', event)">Jadwal</button>
                                     <div class="additional-info" id="info4">
-                                        <button class="text-black h4" onclick="jkuliah()">YANG BIKIN PAGE INI TAK
-                                            PERKOSA LO KAMU</button>
+                                        <button class="text-black h4" onclick="jkuliah()">Jadwal Kuliah</button>
                                         <button class="text-black h4" onclick="jujian()">Jadwal Ujian</button>
                                         <button class="text-black h4" onclick="jdosen()">Jadwal Dosen</button>
                                     </div>

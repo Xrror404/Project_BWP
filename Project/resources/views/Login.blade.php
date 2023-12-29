@@ -12,6 +12,25 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: transparent;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+        }
+
+
+
         #RememberMe:hover {
             cursor: pointer;
         }
@@ -38,8 +57,14 @@
             transition: transform 0.3s ease-in-out;
         }
 
-        .logo-img:hover {
-            transform: scale(1.2);
+        #logoImg:hover {
+            transform: rotate(360deg);
+        }
+
+        #logoImg {
+            height: 7em;
+            width: 7em;
+            transition: transform 0.5s ease-in-out;
         }
     </style>
 </head>
