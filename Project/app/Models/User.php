@@ -22,9 +22,22 @@ class User extends Authenticatable
     public $incrementing = false;
     public $timestamps = false;
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        [
+            'name',
+            'email',
+            'password',
+        ],
+        [
+            'id_user',
+            'id_jurusan',
+            'nama_user',
+            'email_user',
+            'nmrtlp',
+            'role_user',
+            'user_username',
+            'user_password',
+            'user_added_date'
+        ]
     ];
 
     /**

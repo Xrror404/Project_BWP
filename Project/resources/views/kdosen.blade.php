@@ -42,13 +42,14 @@
                     <div class="col-md-9">
                         <ul class="list-group" style="background-color: black">
                             <li class="list-group-item">
-                                <strong>Nama:</strong> Nama Dosen Anda<br>
-                                <strong>Email:</strong> email@example.com<br>
-                                <strong>Nomor Telepon:</strong> 123456789
+                                <strong>Nama:</strong> {{ $dosen->nama_user ?? '' }}<br>
+                                <strong>Email:</strong> {{ $dosen->email_user ?? '' }}<br>
+                                <strong>Nomor Telepon:</strong> {{ $dosen->nmrtlp ?? '' }}
                             </li>
                         </ul>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

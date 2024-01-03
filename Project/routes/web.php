@@ -6,7 +6,7 @@ use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PoinController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -80,3 +80,4 @@ Route::middleware('auth.custom')->group(function () {
         return view('pengaturan');
     })->name('pengaturan');
 });
+Route::get('/jadwal-dosen', [UserController::class, 'showDosenSchedule']);
