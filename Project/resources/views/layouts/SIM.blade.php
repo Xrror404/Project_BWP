@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Sistem ISTTS - Home</title>
+    <title>Sistem ISTTS</title>
     <link rel="icon" href="../Assets/logoistts.png" type="image/x-icon">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -231,21 +231,17 @@
     </style>
 </head>
 
-<body class="bg-black p-0">
+<body class="bg-dark p-0">
     <div class="row m-0">
         <div id="sidebar" class="col-lg-2" style="padding: 0vh 0vw; margin: 0vh 0vw;">
             <div class="col-lg-2"style="padding:0vh 0vw;margin:0vh 0vw;">
-                <div class="sidebar p-0 bg-dark">
+                <div class="sidebar p-0"style="background-color: #360000;">
                     <div class="container p-0">
                         @php
-                            // Mengambil nilai 'nama_user' dari session
                             $namaMhs = session('nama_user');
-
-                            // Mengambil nilai 'user_username' dari session
                             $nrpMhs = session('user_username');
                             if (empty($namaMhs) || empty($nrpMhs)) {
                                 $mahasiswaCookie = json_decode(request()->cookie('mahasiswa'), true);
-                                // Mengambil nilai dari cookie jika ada
                                 $namaMhs = $mahasiswaCookie['nama_user'] ?? null;
                                 $nrpMhs = $mahasiswaCookie['user_username'] ?? null;
                             }
