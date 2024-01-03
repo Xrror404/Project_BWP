@@ -303,20 +303,37 @@
                                             height="50vh"><span>Akademik</span>
                                     </button>
                                     <div class="additional-info" id="info3">
-                                        <button class="text-black h4" onclick="redirectToInfo()">Informasi Mata</button>
-                                        <button class="text-black h4" onclick="laporan()">laporan Nilai</button>
-                                        <button class="text-black h4" onclick="transkip()">Transkip
-                                            Nilai</button>
-                                        <button class="text-black h4" onclick="grafik()">Grafik</button>
+                                        <button class="text-black h4" onclick="redirectToInfo()"><img
+                                                src="{{ Asset('Assets/informasi.jpg') }}" alt="" width="40vw"
+                                                height="30vh">
+                                            <span>Informasi Mata </span></button>
+                                        <button class="text-black h4" onclick="laporan()"><img
+                                                src="{{ Asset('Assets/bintang.jpg') }}" alt="" width="40vw"
+                                                height="30vh">
+                                            <span>Laporan Nilai </span></button></button>
+                                        <button class="text-black h4" onclick="transkip()"><img
+                                                src="{{ Asset('Assets/garfiknilai.png') }}" alt=""
+                                                width="40vw" height="30vh">
+                                            <span>Transkip Nilai</span></button>
+                                        <button class="text-black h4" onclick="grafik()"><img
+                                                src="{{ Asset('Assets/grafik.jpg') }}" alt="" width="40vw"
+                                                height="30vh">
+                                            <span>Grafik</span></button>
                                     </div>
                                     <button class="text-black h4" onclick="toggleInfo('info4', event)">
                                         <img src="{{ Asset('Assets/jam.png') }}" alt="" width="50vw"
                                             height="50vh"><span>Jadwal</span>
                                     </button>
                                     <div class="additional-info" id="info4">
-                                        <button class="text-black h4" onclick="jkuliah()">Jadwal Kuliah</button>
-                                        <button class="text-black h4" onclick="jujian()">Jadwal Ujian</button>
-                                        <button class="text-black h4" onclick="jdosen()">Jadwal Dosen</button>
+                                        <button class="text-black h4" onclick="jkuliah()"> <img
+                                                src="{{ Asset('Assets/jadwal2.png') }}" alt=""
+                                                width="50vw" height="50vh"><span>Jadwal Kuliah</span></button>
+                                        <button class="text-black h4" onclick="jujian()"><img
+                                                src="{{ Asset('Assets/jawdal.jpg') }}" alt="" width="50vw"
+                                                height="50vh"><span>Jadwal Ujian</span></button>
+                                        <button class="text-black h4" onclick="jdosen()"><img
+                                                src="{{ Asset('Assets/dosen.jpg') }}" alt="" width="50vw"
+                                                height="50vh"><span>Jadwal Dosen</span></button>
                                     </div>
                                     <button class="text-black h4" onclick="toggleInfo('info5', event)"><img
                                             src="{{ Asset('Assets/note.jpg') }}" alt="" width="50vw"
@@ -338,8 +355,8 @@
                                         <button class="text-black h4" onclick="ta()">History TA/Tesis</button>
                                     </div>
                                     <button class="text-black h4" onclick="pengaturan('info8', event)">
-                                        <img src="{{ Asset('Assets/pengaturan.jpg') }}" alt="" width="50vw"
-                                            height="50vh"><span>Pengaturan</span>
+                                        <img src="{{ Asset('Assets/pengaturan.jpg') }}" alt=""
+                                            width="50vw" height="50vh"><span>Pengaturan</span>
                                     </button>
                                     <button class="text-black h4" onclick="kdosen('info9', event)"><img
                                             src="{{ Asset('Assets/kontak.jpg') }}" alt="" width="50vw"
