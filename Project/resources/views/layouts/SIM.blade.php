@@ -290,60 +290,61 @@
                                 <div class="bg-dark p-4">
 
                                     <button class="text-black h4" onclick="redirectToHome()">
-                                        <img src="{{ Asset('Assets/home.jpg') }}" alt="" width="50"
-                                            height="50"> Beranda
+                                        <img src="{{ Asset('Assets/home.jpg') }}" alt="" width="50vw"
+                                            height="50vh"> <span>Beranda</span>
                                     </button>
                                     <button id="pointButton" class="text-black h4" onclick="redirectToPoint()">
-                                        <img src="{{ Asset('Assets/centang.jpg') }}" alt="" width="50"
-                                            height="50"> Point</button>
+                                        <img src="{{ Asset('Assets/centang.jpg') }}" alt="" width="50vw"
+                                            height="50vh"> <span>Point</span>
+                                    </button>
 
                                     <button class="text-black h4" onclick="toggleInfo('info3', event)">
-                                        <img src="{{ Asset('Assets/togah.jpg') }}" alt="" width="50"
-                                            height="50">Akademik</button>
+                                        <img src="{{ Asset('Assets/togah.jpg') }}" alt="" width="50vw"
+                                            height="50vh"><span>Akademik</span>
+                                    </button>
                                     <div class="additional-info" id="info3">
-                                        <button class="text-black h4" onclick="redirectToInfo()">Informasi
-                                            Mata</button>
+                                        <button class="text-black h4" onclick="redirectToInfo()">Informasi Mata</button>
                                         <button class="text-black h4" onclick="laporan()">laporan Nilai</button>
                                         <button class="text-black h4" onclick="transkip()">Transkip
                                             Nilai</button>
                                         <button class="text-black h4" onclick="grafik()">Grafik</button>
                                     </div>
                                     <button class="text-black h4" onclick="toggleInfo('info4', event)">
-                                        <img src="{{ Asset('Assets/jam.png') }}" alt="" width="50"
-                                            height="50">Jadwal</button>
+                                        <img src="{{ Asset('Assets/jam.png') }}" alt="" width="50vw"
+                                            height="50vh"><span>Jadwal</span>
+                                    </button>
                                     <div class="additional-info" id="info4">
                                         <button class="text-black h4" onclick="jkuliah()">Jadwal Kuliah</button>
                                         <button class="text-black h4" onclick="jujian()">Jadwal Ujian</button>
                                         <button class="text-black h4" onclick="jdosen()">Jadwal Dosen</button>
                                     </div>
                                     <button class="text-black h4" onclick="toggleInfo('info5', event)"><img
-                                            src="{{ Asset('Assets/note.jpg') }}" alt="" width="40"
-                                            height="40">Rencana
-                                        Studi</button>
+                                            src="{{ Asset('Assets/note.jpg') }}" alt="" width="50vw"
+                                            height="50vh"><span>Rencana Studi</span>
+                                    </button>
                                     <div class="additional-info" id="info5">
-                                        <button class="text-black h4" onclick="frs()">Pengisian
-                                            FRS</button><button class="text-black h4" onclick="batal()">Batal
-                                            Tambah</button>
+                                        <button class="text-black h4" onclick="frs()">Pengisian FRS</button>
+                                        <button class="text-black h4" onclick="batal()">Batal Tambah</button>
                                         <button class="text-black h4" onclick="drop()">Drop</button>
                                         <button class="text-black h4" onclick="krs()">Download KRS</button>
                                     </div>
                                     <button class="text-black h4" onclick="luang('info6', event)"><img
-                                            src="{{ Asset('Assets/uang.jpg') }}" alt="" width="40"
-                                            height="40">
-                                        Laporan
-                                        Keuangan</button>
+                                            src="{{ Asset('Assets/uang.jpg') }}" alt="" width="50vw"
+                                            height="50vh"><span>Laporan Keuangan</span>
+                                    </button>
                                     <button class="text-black h4"
                                         onclick="toggleInfo('info7', event)">TA/Tesis</button>
                                     <div class="additional-info" id="info7">
                                         <button class="text-black h4" onclick="ta()">History TA/Tesis</button>
                                     </div>
                                     <button class="text-black h4" onclick="pengaturan('info8', event)">
-                                        <img src="{{ Asset('Assets/pengaturan.jpg') }}" alt="" width="40"
-                                            height="40">Pengaturan</button>
+                                        <img src="{{ Asset('Assets/pengaturan.jpg') }}" alt="" width="50vw"
+                                            height="50vh"><span>Pengaturan</span>
+                                    </button>
                                     <button class="text-black h4" onclick="kdosen('info9', event)"><img
-                                            src="{{ Asset('Assets/kontak.jpg') }}" alt="" width="40"
-                                            height="40">Kontak
-                                        Dosen</button>
+                                            src="{{ Asset('Assets/kontak.jpg') }}" alt="" width="50vw"
+                                            height="50vh"><span>Kontak Dosen</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
