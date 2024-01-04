@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Sistem ISTTS - Home</title>
+    <title>Sistem ISTTS</title>
     <link rel="icon" href="../Assets/logoistts.png" type="image/x-icon">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -231,21 +231,17 @@
     </style>
 </head>
 
-<body class="bg-black p-0">
+<body class="bg-dark p-0">
     <div class="row m-0">
         <div id="sidebar" class="col-lg-2" style="padding: 0vh 0vw; margin: 0vh 0vw;">
             <div class="col-lg-2"style="padding:0vh 0vw;margin:0vh 0vw;">
-                <div class="sidebar p-0 bg-dark">
+                <div class="sidebar p-0"style="background-color: #360000;">
                     <div class="container p-0">
                         @php
-                            // Mengambil nilai 'nama_user' dari session
                             $namaMhs = session('nama_user');
-
-                            // Mengambil nilai 'user_username' dari session
                             $nrpMhs = session('user_username');
                             if (empty($namaMhs) || empty($nrpMhs)) {
                                 $mahasiswaCookie = json_decode(request()->cookie('mahasiswa'), true);
-                                // Mengambil nilai dari cookie jika ada
                                 $namaMhs = $mahasiswaCookie['nama_user'] ?? null;
                                 $nrpMhs = $mahasiswaCookie['user_username'] ?? null;
                             }
@@ -292,44 +288,80 @@
                             <br>
                             <div class="collapse" id="navbarToggleExternalContent">
                                 <div class="bg-dark p-4">
-                                    <button class="text-black h4" onclick="redirectToHome()">Beranda</button>
-                                    <button id="pointButton" class="text-black h4"
-                                        onclick="redirectToPoint()">Point</button>
 
-                                    <button class="text-black h4" onclick="toggleInfo('info3', event)">Akademik</button>
+                                    <button class="text-black h4" onclick="redirectToHome()">
+                                        <img src="{{ Asset('Assets/home.jpg') }}" alt="" width="50vw"
+                                            height="50vh"> <span>Beranda</span>
+                                    </button>
+                                    <button id="pointButton" class="text-black h4" onclick="redirectToPoint()">
+                                        <img src="{{ Asset('Assets/centang.jpg') }}" alt="" width="50vw"
+                                            height="50vh"> <span>Point</span>
+                                    </button>
+
+                                    <button class="text-black h4" onclick="toggleInfo('info3', event)">
+                                        <img src="{{ Asset('Assets/togah.jpg') }}" alt="" width="50vw"
+                                            height="50vh"><span>Akademik</span>
+                                    </button>
                                     <div class="additional-info" id="info3">
-                                        <button class="text-black h4" onclick="redirectToInfo()">Informasi
-                                            Mata</button>
-                                        <button class="text-black h4" onclick="laporan()">laporan Nilai</button>
-                                        <button class="text-black h4" onclick="transkip()">Transkip
-                                            Nilai</button>
-                                        <button class="text-black h4" onclick="grafik()">Grafik</button>
+                                        <button class="text-black h4" onclick="redirectToInfo()"><img
+                                                src="{{ Asset('Assets/informasi.jpg') }}" alt="" width="40vw"
+                                                height="30vh">
+                                            <span>Informasi Mata </span></button>
+                                        <button class="text-black h4" onclick="laporan()"><img
+                                                src="{{ Asset('Assets/bintang.jpg') }}" alt="" width="40vw"
+                                                height="30vh">
+                                            <span>Laporan Nilai </span></button></button>
+                                        <button class="text-black h4" onclick="transkip()"><img
+                                                src="{{ Asset('Assets/garfiknilai.png') }}" alt=""
+                                                width="40vw" height="30vh">
+                                            <span>Transkip Nilai</span></button>
+                                        <button class="text-black h4" onclick="grafik()"><img
+                                                src="{{ Asset('Assets/grafik.jpg') }}" alt="" width="40vw"
+                                                height="30vh">
+                                            <span>Grafik</span></button>
                                     </div>
-                                    <button class="text-black h4" onclick="toggleInfo('info4', event)">Jadwal</button>
+                                    <button class="text-black h4" onclick="toggleInfo('info4', event)">
+                                        <img src="{{ Asset('Assets/jam.png') }}" alt="" width="50vw"
+                                            height="50vh"><span>Jadwal</span>
+                                    </button>
                                     <div class="additional-info" id="info4">
-                                        <button class="text-black h4" onclick="jkuliah()">Jadwal Kuliah</button>
-                                        <button class="text-black h4" onclick="jujian()">Jadwal Ujian</button>
-                                        <button class="text-black h4" onclick="jdosen()">Jadwal Dosen</button>
+                                        <button class="text-black h4" onclick="jkuliah()"> <img
+                                                src="{{ Asset('Assets/jadwal2.png') }}" alt=""
+                                                width="50vw" height="50vh"><span>Jadwal Kuliah</span></button>
+                                        <button class="text-black h4" onclick="jujian()"><img
+                                                src="{{ Asset('Assets/jawdal.jpg') }}" alt="" width="50vw"
+                                                height="50vh"><span>Jadwal Ujian</span></button>
+                                        <button class="text-black h4" onclick="jdosen()"><img
+                                                src="{{ Asset('Assets/dosen.jpg') }}" alt="" width="50vw"
+                                                height="50vh"><span>Jadwal Dosen</span></button>
                                     </div>
-                                    <button class="text-black h4" onclick="toggleInfo('info5', event)">Rencana
-                                        Studi</button>
+                                    <button class="text-black h4" onclick="toggleInfo('info5', event)"><img
+                                            src="{{ Asset('Assets/note.jpg') }}" alt="" width="50vw"
+                                            height="50vh"><span>Rencana Studi</span>
+                                    </button>
                                     <div class="additional-info" id="info5">
-                                        <button class="text-black h4" onclick="frs()">Pengisian
-                                            FRS</button><button class="text-black h4" onclick="batal()">Batal
-                                            Tambah</button>
+                                        <button class="text-black h4" onclick="frs()">Pengisian FRS</button>
+                                        <button class="text-black h4" onclick="batal()">Batal Tambah</button>
                                         <button class="text-black h4" onclick="drop()">Drop</button>
                                         <button class="text-black h4" onclick="krs()">Download KRS</button>
                                     </div>
-                                    <button class="text-black h4" onclick="luang('info6', event)">Laporan
-                                        Keuangan</button>
-                                    <button class="text-black h4" onclick="toggleInfo('info7', event)">TA/Tesis</button>
+                                    <button class="text-black h4" onclick="luang('info6', event)"><img
+                                            src="{{ Asset('Assets/uang.jpg') }}" alt="" width="50vw"
+                                            height="50vh"><span>Laporan Keuangan</span>
+                                    </button>
+                                    <button class="text-black h4"
+                                        onclick="toggleInfo('info7', event)">TA/Tesis</button>
                                     <div class="additional-info" id="info7">
                                         <button class="text-black h4" onclick="ta()">History TA/Tesis</button>
                                     </div>
-                                    <button class="text-black h4"
-                                        onclick="pengaturan('info8', event)">Pengaturan</button>
-                                    <button class="text-black h4" onclick="kdosen('info9', event)">Kontak
-                                        Dosen</button>
+                                    <button class="text-black h4" onclick="pengaturan('info8', event)">
+                                        <img src="{{ Asset('Assets/pengaturan.jpg') }}" alt=""
+                                            width="50vw" height="50vh"><span>Pengaturan</span>
+                                    </button>
+                                    <button class="text-black h4" onclick="kdosen('info9', event)"><img
+                                            src="{{ Asset('Assets/kontak.jpg') }}" alt="" width="50vw"
+                                            height="50vh"><span>Kontak Dosen</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
