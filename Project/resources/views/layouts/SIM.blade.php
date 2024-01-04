@@ -340,10 +340,18 @@
                                             height="50vh"><span>Rencana Studi</span>
                                     </button>
                                     <div class="additional-info" id="info5">
-                                        <button class="text-black h4" onclick="frs()">Pengisian FRS</button>
-                                        <button class="text-black h4" onclick="batal()">Batal Tambah</button>
-                                        <button class="text-black h4" onclick="drop()">Drop</button>
-                                        <button class="text-black h4" onclick="krs()">Download KRS</button>
+                                        <button class="text-black h4" onclick="frs()"><img
+                                                src="{{ Asset('Assets/pengisian.jpg') }}" alt=""
+                                                width="50vw" height="50vh"><span>Pengisian FRS</span></button>
+                                        <button class="text-black h4" onclick="batal()"><img
+                                                src="{{ Asset('Assets/centang.jpg') }}" alt=""
+                                                width="50vw" height="50vh"><span>Batal Tambah</span></button>
+                                        <button class="text-black h4" onclick="drop()"><img
+                                                src="{{ Asset('Assets/drop.jpg') }}" alt="" width="50vw"
+                                                height="50vh"><span>Drop</span></button>
+                                        <button class="text-black h4" onclick="krs()"><img
+                                                src="{{ Asset('Assets/undo.png') }}" alt="" width="50vw"
+                                                height="50vh"><span>Download KRS</span></button>
                                     </div>
                                     <button class="text-black h4" onclick="luang('info6', event)"><img
                                             src="{{ Asset('Assets/uang.jpg') }}" alt="" width="50vw"
