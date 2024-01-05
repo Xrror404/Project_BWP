@@ -70,9 +70,11 @@ Route::middleware('auth.custom')->group(function () {
     Route::get('/TA/Tesis', function () {
         return view('ta');
     })->name('ta');
-    Route::get('/kotak dosen', function () {
-        return view('kdosen');
-    })->name('kdosen');
+
+
+    Route::get('/kotak_dosen', [UserController::class, 'showUsersWithRoleOne'])->name('kdosen');
+
+
     Route::get('/laporan keuangan', function () {
         return view('luang');
     })->name('luang');
@@ -83,4 +85,3 @@ Route::middleware('auth.custom')->group(function () {
         return view('biodata');
     });
 });
-Route::get('/jadwal-dosen', [UserController::class, 'showDosenSchedule']);
