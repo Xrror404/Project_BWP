@@ -7,12 +7,9 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    public function showDosenSchedule()
+    public function showUsersWithRoleOne()
     {
-        // Ambil data user dengan role 1
-        $dosen = User::where('role_user', 1)->first();
-
-        // Kirim data ke view
-        return view('nama-view', compact('dosen'));
+        $users = User::where('role_user', 1)->get();
+        return view('kdosen', ['users' => $users]);
     }
 }

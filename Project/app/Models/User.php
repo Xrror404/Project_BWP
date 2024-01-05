@@ -21,24 +21,24 @@ class User extends Authenticatable
     protected $table = 'user';
     public $incrementing = false;
     public $timestamps = false;
-    protected $fillable = [
-        [
-            'name',
-            'email',
-            'password',
-        ],
-        [
-            'id_user',
-            'id_jurusan',
-            'nama_user',
-            'email_user',
-            'nmrtlp',
-            'role_user',
-            'user_username',
-            'user_password',
-            'user_added_date'
-        ]
-    ];
+    // protected $fillable = [
+    //     [
+    //         'name',
+    //         'email',
+    //         'password',
+    //     ],
+    //     [
+    //         'id_user',
+    //         'id_jurusan',
+    //         'nama_user',
+    //         'email_user',
+    //         'nmrtlp',
+    //         'role_user',
+    //         'user_username',
+    //         'user_password',
+    //         'user_added_date'
+    //     ]
+    // ];
 
     /**
      * The attributes that should be hidden for serialization.
