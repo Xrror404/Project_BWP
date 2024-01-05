@@ -20,41 +20,75 @@
     <div class="card">
         <div class="card-body">
             <div class="row">
-                <div class="col-md-6">
-                    <img src="{{ Asset('Assets/profile.jpg') }}" alt="">
-
-                </div>
-                <div class="col-md-6">
-
-                    <button style="background-color: blue"><img src="{{ Asset('Assets/undo.png') }}" alt="">DOWNLOAD
-                        FOTO</button>
-                </div>
-                <div class="col-md-6 text-right">
-                    <br>
-                    <br>
-                </div>
-            </div>
-
-            <!-- Kontak Dosen Section -->
-            <div class="mt-4">
-                <h5 class="mb-3">Kontak Dosen</h5>
-
-                <!-- Informasi Kontak Dosen -->
                 <div class="row">
-                    <div class="col-md-3">
-                        <!-- Gambar Dosen (Ganti dengan foto dosen) -->
-                        <img src="{{ asset('path-to-your-image.jpg') }}" alt="Foto Dosen" class="img-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="{{ Asset('Assets/profile.jpg') }}" alt="Profile Image">
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button class="btn btn-primary" style="width: 150px;">
+                                        <img src="{{ Asset('Assets/undo.png') }}" alt="Undo Icon" style="width: 20px;">
+                                        DOWNLOAD FOTO
+                                    </button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button class="btn btn-primary" style="width: 150px;">
+                                        <img src="{{ Asset('Assets/pensil.jpg') }}" alt="Pencil Icon" style="width: 20px;">
+                                        Edit
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-9">
-                        <ul class="list-group" style="background-color: black">
-                            <li class="list-group-item">
-                                <strong>Nama:</strong> {{ $dosen->nama_user ?? '' }}<br>
-                                <strong>Email:</strong> {{ $dosen->email_user ?? '' }}<br>
-                                <strong>Nomor Telepon:</strong> {{ $dosen->nmrtlp ?? '' }}
-                            </li>
-                        </ul>
+
+                    <div style="display: flex; justify-content: space-around;">
+                        <div style="text-align: center;">
+                            <h1 style="color: white;">-</h1>
+                            <h2>-</h2>
+                        </div>
+                        <div style="text-align: center;">
+                            <h1 style="color: white;">-</h1>
+                            <h2>-</h2>
+                        </div>
+                        <div style="text-align: center;">
+                            <h1 style="color: white;">-</h1>
+                            <h2>-</h2>
+                        </div>
+                        <div style="text-align: center;">
+                            <h1 style="color: white;">-</h1>
+                            <h2>-</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 text-right" style="background-color: black">
+                        <h1 style="color: white">BIO DATA:</h1>
+                        <h2>Alamat:</h2>
+                        <h3>Email:</h3>
+                        <h3>Email ISTTS:</h3>
+                        <h3>Telepone/HP:</h3>
+                        <h3>Tanggal lahir:</h3>
+                        <h3>Agama:</h3>
+                        <h3>Jenis kelamin:</h3>
+                        <h3>Status nikah:</h3>
+                    </div>
+                    <div class="col-md-6 text-right"style="background-color: blue">
+                        <h1 style="color: white">Orang tua:</h1>
+                        <h1 style="color: white">Nama:</h1>
+                        <h2>Alamat:</h2>
+                        <h3>Telepone/HP:</h3>
+                    </div>
+                    <div class="col-md-6 text-right"style="background-color: yellow">
+                        <h1 style="color: white">Status akademis:</h1>
+                        <h1 style="color: white">Dosen wali:</h1>
+                        <h2>Major:</h2>
+                        <h3>Status:</h3>
                     </div>
                 </div>
+
+
 
             </div>
         </div>
