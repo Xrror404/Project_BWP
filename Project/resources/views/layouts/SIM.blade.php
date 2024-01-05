@@ -264,7 +264,8 @@
                                         </span>
                                         <div class="dropdown-menu bg-light dropdown-menu-right"
                                             aria-labelledby="dropdownMenuButton" id="DropDownButton">
-                                            <button class="dropdown-item" type="button">Biodata</button>
+                                            <button class="dropdown-item" type="button"
+                                                onclick="window.location.href='/biodata'">Biodata</button>
                                             <button class="dropdown-item" type="button"
                                                 onclick="logoutMethod()">Logout</button>
                                         </div>
@@ -511,6 +512,10 @@
 
     function pengaturan() {
         window.location.href = '{{ route('pengaturan') }}';
+    }
+
+    function redirectToBiodata() {
+        window.location.href = '/biodata'; // Gantilah dengan URL yang sesuai di aplikasi Anda
     }
 </script>
 

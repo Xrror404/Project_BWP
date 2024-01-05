@@ -79,5 +79,8 @@ Route::middleware('auth.custom')->group(function () {
     Route::get('/pengaturan', function () {
         return view('pengaturan');
     })->name('pengaturan');
+    Route::get('/biodata', function () {
+        return view('biodata');
+    });
 });
 Route::get('/jadwal-dosen', [UserController::class, 'showDosenSchedule']);
