@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class PenerimaPoin extends Model
 {
     use HasFactory;
-
+    protected $table = 'penerima_poin';
     protected $primaryKey = 'id_pp';
-    protected $table = 'penerima_poin'; // Sesuaikan dengan nama tabel yang benar
-
-    public function poin()
+    public $timestamps = false;
+    public $incrementing = false;
+    public function poins()
     {
-        return $this->belongsTo(Poin::class, 'id_acara', 'id_acara');
+        return $this->belongsTo('App\Models\Poin', 'id_acara');
     }
 }

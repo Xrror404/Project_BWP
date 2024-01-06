@@ -15,13 +15,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {{-- @dd($poinAll->Orang) --}}
-                        {{-- Ini percobaan yang masih belum sempurna V --}}
-                        @foreach ($poinAll as $poin)
+                        @foreach ($poin_user as $poin)
                             <tr>
-                                <td>{{ $poin->poin_added_date ?? 'N/A' }}</td>
-                                <td>{{ $poin->nama_acara ?? 'N/A' }}</td>
-                                <td>{{ $poin->jml_poin ?? 'N/A' }}</td>
+                                <td>{{ $poin->poins->poin_added_date ?? 'N/A' }}</td>
+                                <td> {{ $poin->poins->nama_acara ?? 'N/A' }}</td>
+                                <td>{{ $poin->poins->jml_poin ?? 'N/A' }}</td>
                             </tr>
                         @endforeach
                         {{-- ini Yang Seharusnya V --}}
