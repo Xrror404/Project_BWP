@@ -13,7 +13,9 @@ class Mahasiswa extends Authenticatable
     protected $table = 'user';
     protected $primaryKey = 'id_user';
     public $timestamps = false;
-    public static function getByNrp($user_username)
+    public $incrementing = false;
+    protected $fillable = ['user_username', 'user_password', 'nama_user', 'role_user', 'id_jurusan'];
+    public function getByNrp($user_username)
     {
         return self::where('user_username', $user_username)->first();
     }

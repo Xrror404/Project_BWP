@@ -4,9 +4,8 @@
     <div class="card">
         <div class="card-body">
             <!-- Your existing content -->
-
             <div class="container">
-                <h2 class="text-light">Point {{ $user->user_username }}</h2>
+                <h2 class="text-light">Point {{ Auth::user()->nama_user }}</h2>
                 <table class="table">
                     <thead>
                         <tr>

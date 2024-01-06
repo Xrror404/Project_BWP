@@ -28,7 +28,7 @@ Route::prefix('/Login')->group(function () {
 });
 Route::get('/logout', [HomeController::class, 'logout'])->name('logout');
 
-Route::middleware('auth.custom')->group(function () {
+Route::group(['middleware' => 'web'], function ()  {
     Route::get('/Home', [HomeController::class, 'RedirectTo'])->name('home');
     Route::get('/point', [PoinController::class, 'index'])->name('point');
 

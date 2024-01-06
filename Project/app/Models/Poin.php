@@ -15,7 +15,7 @@ class Poin extends Model
     public $incrementing = false;
     public $timestamps = true;
 
-    public function Orang()
+    public function PointByUser()
     {
         return $this->belongstoMany(User::class, 'penerima_poin', 'id_acara', 'id_penerima');
     }

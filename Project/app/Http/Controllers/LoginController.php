@@ -25,16 +25,16 @@ class LoginController extends Controller
         ];
 
         if (Auth::attempt($credentials)) {
-            // Retrieve the authenticated user
             $authenticatedUser = Auth::user();
-
             if ($authenticatedUser) {
+                $idUser=$authenticatedUser->id_user;
                 $namaUser = $authenticatedUser->nama_user;
                 $userUsername = $authenticatedUser->user_username;
                 $roleUser = $authenticatedUser->role_user;
                 $jurusanMhs = $authenticatedUser->id_jurusan;
                 if ($roleUser == 0) {
                     $mahasiswaData = [
+                        'id_user'=>$idUser,
                         'nama_user' => $namaUser,
                         'user_username' => $userUsername,
                         'roleUser' => $roleUser,
