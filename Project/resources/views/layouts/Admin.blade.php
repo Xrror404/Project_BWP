@@ -295,43 +295,14 @@
                                             height="50vh"> <span>Beranda</span>
                                     </button>
 
-
-                                    <button class="text-black h4" onclick="toggleInfo('info3', event)">
-                                        <img src="{{ Asset('Assets/togah.jpg') }}" alt="" width="50vw"
-                                            height="50vh"><span>Akademik</span>
-                                    </button>
-                                    <div class="additional-info" id="info3">
-                                        <button class="text-black h4" onclick="redirectToInfo()"><img
-                                                src="{{ Asset('Assets/informasi.jpg') }}" alt="" width="40vw"
-                                                height="30vh">
-                                            <span>Informasi Mata </span></button>
-
-                                    </div>
-
-                                    <button class="text-black h4" onclick="toggleInfo('info4', event)">
-                                        <img src="{{ Asset('Assets/jam.png') }}" alt="" width="50vw"
-                                            height="50vh"><span>Jadwal</span>
-                                    </button>
-                                    <div class="additional-info" id="info4">
-                                        <button class="text-black h4" onclick="jkuliah()"> <img
-                                                src="{{ Asset('Assets/jadwal2.png') }}" alt="" width="50vw"
-                                                height="50vh"><span>Jadwal Kuliah</span></button>
-                                        <button class="text-black h4" onclick="jujian()"><img
-                                                src="{{ Asset('Assets/jawdal.jpg') }}" alt="" width="50vw"
-                                                height="50vh"><span>Jadwal Ujian</span></button>
-                                    </div>
-
-
-
-                                    <button class="text-black h4" onclick="toggleInfo('info7', event)">TA/Tesis</button>
-                                    <div class="additional-info" id="info7">
-                                        <button class="text-black h4" onclick="ta()">History TA/Tesis</button>
-                                    </div>
                                     <button class="text-black h4" onclick="pengaturan('info8', event)">
                                         <img src="{{ Asset('Assets/pengaturan.jpg') }}" alt="" width="50vw"
                                             height="50vh"><span>Pengaturan</span>
                                     </button>
-
+                                    <button class="text-black h4" onclick="luang('info6', event)"><img
+                                            src="{{ Asset('Assets/uang.jpg') }}" alt="" width="50vw"
+                                            height="50vh"><span>Laporan Keuangan mahasiswa</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -404,7 +375,7 @@
     }
 
     function redirectToHome() {
-        window.location.href = '{{ route('Dosen') }}';
+        window.location.href = '{{ route('admin') }}';
     }
 
 
@@ -422,7 +393,7 @@
     }
 
     function pengaturan() {
-        window.location.href = '{{ route('pengaturandosen') }}';
+        window.location.href = '{{ route('pAdmin') }}';
     }
 
     function luang() {

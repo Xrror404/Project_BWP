@@ -74,12 +74,7 @@
                         <h3>Jenis kelamin:</h3>
                         <h3>Status nikah:</h3>
                     </div>
-                    <div class="col-md-6 text-right"style="background-color: blue">
-                        <h1 style="color: white">Orang tua:</h1>
-                        <h1 style="color: white">Nama:</h1>
-                        <h2>Alamat:</h2>
-                        <h3>Telepone/HP:</h3>
-                    </div>
+
                     <div class="col-md-6 text-right"style="background-color: yellow">
                         <h1 style="color: white">Status akademis:</h1>
                         <h1 style="color: white">Dosen wali:</h1>

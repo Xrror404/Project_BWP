@@ -35,9 +35,7 @@
                     <br>
                     <br>
                     <h2 style="color: white">Pengumuman baru</h2>
-                    <br>
-                    <br>
-                    <h3 style="color: white">Pengingat pembayaran</h3>
+
                 </div>
                 <div style="float: left; width: 30%;color: white;">
                     <h1>Push Notification</h1>
@@ -46,12 +44,7 @@
                     <input type="checkbox" id="notificationCheckbox" style="transform: scale(1.5);">
                     <!-- Menggunakan transform untuk memperbesar checkbox -->
                     <label for="notificationCheckbox"></label>
-                    <br>
-                    <br>
-                    <br> <!-- Line break untuk memberikan jarak antara tombol dan checkbox -->
-                    <input type="checkbox" id="notificationCheckbox" style="transform: scale(1.5);">
-                    <!-- Menggunakan transform untuk memperbesar checkbox -->
-                    <label for="notificationCheckbox"></label>
+
                 </div>
 
 
@@ -63,12 +56,7 @@
                     <input type="checkbox" id="notificationCheckbox" style="transform: scale(1.5);">
                     <!-- Menggunakan transform untuk memperbesar checkbox -->
                     <label for="notificationCheckbox"></label>
-                    <br>
-                    <br>
-                    <br> <!-- Line break untuk memberikan jarak antara tombol dan checkbox -->
-                    <input type="checkbox" id="notificationCheckbox" style="transform: scale(1.5);">
-                    <!-- Menggunakan transform untuk memperbesar checkbox -->
-                    <label for="notificationCheckbox"></label>
+
                 </div>
 
 

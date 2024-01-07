@@ -1,4 +1,4 @@
-@extends('layouts.SIM')
+@extends('layouts.Admin')
 
 
 {{-- @section('header')

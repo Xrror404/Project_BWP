@@ -35,6 +35,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/point', [PoinController::class, 'index'])->name('point');
     Route::get('/admin', [adminController::class, 'RedirectTo'])->name('admin');
 
+
     Route::get('/info', function () {
         return view('info');
     })->name('info');
@@ -99,6 +100,14 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('Laporan-keuangan-mahasiswa', function () {
         return view('luangmahasiswa');
     })->name('luangmahasiswa');
+    Route::get('Dosen', function () {
+        return view('Dosen');
+    })->name('Dosen');
+    Route::get('Peraturan-Admin', function () {
+        return view('pAdmin');
+    })->name('pAdmin');
+
+
 
     Route::get('/kotak_dosen', [UserController::class, 'showUsersWithRoleOne'])->name('kdosen');
 
