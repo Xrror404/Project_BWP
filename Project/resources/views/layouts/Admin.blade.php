@@ -228,7 +228,25 @@
             background-color: #333;
             color: #fff;
         }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        button {
+            margin-top: 10px;
+        }
     </style>
+
 </head>
 
 <body class="bg-dark p-0">
@@ -264,8 +282,7 @@
                                         </span>
                                         <div class="dropdown-menu bg-light dropdown-menu-right"
                                             aria-labelledby="dropdownMenuButton" id="DropDownButton">
-                                            <button class="dropdown-item" type="button"
-                                                onclick="window.location.href='/biodata'">Biodata</button>
+
                                             <button class="dropdown-item" type="button"
                                                 onclick="logoutMethod()">Logout</button>
                                         </div>
@@ -298,6 +315,14 @@
                                     <button class="text-black h4" onclick="pengaturan('info8', event)">
                                         <img src="{{ Asset('Assets/pengaturan.jpg') }}" alt="" width="50vw"
                                             height="50vh"><span>Pengaturan</span>
+                                    </button>
+                                    <button class="text-black h4" onclick="matkul('info8', event)">
+                                        <img src="{{ Asset('Assets/tambah.png') }}" alt="" width="50vw"
+                                            height="50vh"><span>matkul</span>
+                                    </button>
+                                    <button class="text-black h4" onclick="mahasiswa('info8', event)">
+                                        <img src="{{ Asset('Assets/maha.png') }}" alt="" width="50vw"
+                                            height="50vh"><span>mahasiswa</span>
                                     </button>
                                     <button class="text-black h4" onclick="luang('info6', event)"><img
                                             src="{{ Asset('Assets/uang.jpg') }}" alt="" width="50vw"
@@ -398,6 +423,14 @@
 
     function luang() {
         window.location.href = '{{ route('luangmahasiswa') }}';
+    }
+
+    function matkul() {
+        window.location.href = '{{ route('matkul') }}';
+    }
+
+    function mahasiswa() {
+        window.location.href = '{{ route('mahasiswa') }}';
     }
 
     function redirectToBiodata() {

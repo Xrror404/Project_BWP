@@ -430,7 +430,7 @@
     }
 
     function redirectToBiodata() {
-        window.location.href = '/biodatadosen'; // Gantilah dengan URL yang sesuai di aplikasi Anda
+        window.location.href = 'biodatadosen'; // Gantilah dengan URL yang sesuai di aplikasi Anda
     }
 </script>
 
