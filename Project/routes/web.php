@@ -4,6 +4,8 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\informasiMata;
 use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\listMahasiswaController;
+use App\Http\Controllers\listUserControler;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Nilai;
 use App\Http\Controllers\PoinController;
@@ -34,6 +36,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/Home', [HomeController::class, 'RedirectTo'])->name('home');
     Route::get('/point', [PoinController::class, 'index'])->name('point');
     Route::get('/admin', [adminController::class, 'RedirectTo'])->name('admin');
+    Route::get('/listUser', [listUserControler::class, 'RedirectTo'])->name('listUser');
 
 
     Route::get('/info', function () {

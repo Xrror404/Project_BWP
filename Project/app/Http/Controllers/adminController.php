@@ -8,6 +8,7 @@ class adminController extends Controller
 {
     public function RedirectTo(Request $request)
     {
+        
         return view('admin');
     }
 }

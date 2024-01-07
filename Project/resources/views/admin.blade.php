@@ -38,23 +38,6 @@
                 </section>
             </div>
             <div class="col-lg-4">
-                <section class="announcement-card p-0"style="margin-bottom:2vh;">
-                    <div class="container-fluid p-0"style="border-bottom: 0.5vh solid #fff;">
-                        <div class="container"style="padding:2vh;">
-                            <h2 class="text-light">Reminder</h2>
-                        </div>
-                    </div>
-                    <div
-                        class="container-fluid bg-secondary"style="margin-left:1vw;width:auto;margin-right:1vw;margin-top: 2vh;">
-                        <h4 class="text-light">Poin Kemahasiswaan Anda: </h4>
-                        <p class="text-light"><i>(Minimal harus terkumpul 1500)</i></p>
-                    </div>
-                    <div class="container-fluid" style="margin-left:1vw;width:auto;">
-                        <p class="text-light"><i>(*) Untuk informasi lengkap mengenai SKPI dan Poin Kemahasiswaan, dapat
-                                menghubungi Biro Administrasi Kemahasiswaan atau akses <span
-                                    class="text-warning"style="cursor: pointer;">kemahasiswaan.istts.ac.id</span></i></p>
-                    </div>
-                </section>
                 <section class="announcement-card p-0">
                     <div class="container-fluid p-0"style="border-bottom: 0.5vh solid #fff;margin-bottom:2vh;">
                         <div class="container"style="padding:2vh;">
