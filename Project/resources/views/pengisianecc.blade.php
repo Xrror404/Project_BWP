@@ -20,7 +20,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-6">
-                    <h5 class="card-title">Pengisian FRS Online</h5>
+                    <h5 class="card-title">Pengisian ECC</h5>
                 </div>
                 <div style="color: white">
                     <h6>Semester GASAL 2023/2024</h6>

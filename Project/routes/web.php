@@ -70,7 +70,12 @@ Route::middleware('auth.custom')->group(function () {
     Route::get('/TA/Tesis', function () {
         return view('ta');
     })->name('ta');
-
+    Route::get('/Pengisian/FRS', function () {
+        return view('pengisianfrs');
+    })->name('pengisianfrs');
+    Route::get('/Pengisian/ecc', function () {
+        return view('pengisianecc');
+    })->name('pengisianecc');
 
     Route::get('/kotak_dosen', [UserController::class, 'showUsersWithRoleOne'])->name('kdosen');
 
