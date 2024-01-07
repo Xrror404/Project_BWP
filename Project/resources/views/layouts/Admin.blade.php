@@ -279,7 +279,6 @@
                                         </span>
                                         <div class="dropdown-menu bg-light dropdown-menu-right"
                                             aria-labelledby="dropdownMenuButton" id="DropDownButton">
-                                            <<<<<<< HEAD=======>>>>>>> 3e921ca3f076af3096e04756cc218aae877becfe
                                                 <button class="dropdown-item" type="button"
                                                     onclick="logoutMethod()">Logout</button>
                                         </div>
@@ -309,7 +308,10 @@
                                             height="50vh"> <span>Beranda</span>
                                     </button>
                                     <button class="text-black h4" onclick="redirectTolistUser()">
-                                        <span>ListUser</span>
+                                        <span>List User</span>
+                                    </button>
+                                    <button class="text-black h4" onclick="redirectTolistMatkul()">
+                                        <span>List Mata Kuliah</span>
                                     </button>
                                     <button class="text-black h4" onclick="pengaturan('info8', event)">
                                         <img src="{{ Asset('Assets/pengaturan.jpg') }}" alt="" width="50vw"
@@ -368,7 +370,9 @@
             </div>
         </div>
     </div>
+    @yield('script')
 </body>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
 </script>
@@ -405,6 +409,10 @@
     function redirectTolistUser() {
         window.location.href = '{{ route('listUser') }}';
     }
+    function redirectTolistMatkul() {
+        window.location.href = '{{ route('listMatkul') }}';
+    }
+
 
     function redirectToInfo() {
         window.location.href = '{{ route('infodosen') }}';

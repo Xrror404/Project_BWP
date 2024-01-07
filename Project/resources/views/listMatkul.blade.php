@@ -8,19 +8,19 @@
                     <h1 class="text-light">Filter:</h1>
                 </div>
             </div>
-            <div class="col-md-1 m-2">
+            <div class="col-md-2 m-2">
                 <div class="container m-2"style="width:max-content;">
                     <button class="btn btn-primary" onclick="location.reload();">
-                        <h4>All User</h4>
+                        <h3>All Matkul</h3>
                     </button>
                 </div>
             </div>
-            <div class="col-md-1 m-2">
+            <div class="col-md-3 m-2">
                 <div class="container m-2">
                     <div class="dropdown">
                         <span class= "btn btn-danger"style="cursor: pointer;" id="dropdownMenuButton" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            <h3>Nama</h3>
+                            <h3>Nama Matkul</h3>
                         </span>
                         <div class="dropdown-menu bg-light dropdown-menu-right" aria-labelledby="dropdownMenuButton"
                             id="DropDownButton">
@@ -30,22 +30,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-1 m-2">
-                <div class="container m-2">
-                    <div class="dropdown">
-                        <span class= "btn btn-danger"style="cursor: pointer;" id="dropdownMenuButton" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <h3>Role</h3>
-                        </span>
-                        <div class="dropdown-menu bg-light dropdown-menu-right" aria-labelledby="dropdownMenuButton"
-                            id="DropDownButton">
-                            <button class="dropdown-item" type="button" id="showMahasiswa">Mahasiswa</button>
-                            <button class="dropdown-item" type="button" id="showDosen">Dosen</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 m-2">
+            <div class="col-md-2 m-2">
                 <div class="container m-2">
                     <div class="dropdown">
                         <span class= "btn btn-danger"style="cursor: pointer;" id="dropdownMenuButton" data-toggle="dropdown"
@@ -63,7 +48,7 @@
             </div>
             <div class="col-md-3 m-2">
                 <div class="container m-4">
-                    <input type="text" id="searchBar" placeholder="Cari nama user...">
+                    <input type="text" id="searchBar" placeholder="Cari nama Matkul...">
                 </div>
             </div>
         </div>
@@ -72,39 +57,29 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>ID User</th>
-                        <th>Nama</th>
-                        <th>Email User</th>
-                        <th>Nomor Telepon</th>
-                        <th>Role User</th>
-                        <th>Jurusan User</th>
-                        <th>Username User</th>
+                        <th>ID Mata Kuliah</th>
+                        <th>Nama Mata Kuliah</th>
+                        <th>Jurusan</th>
+                        <th>Jumlah SKS</th>
+                        <th>Semester</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($mahasiswa as $mhs)
+                    @foreach ($matkul as $mt)
                         <tr>
-                            <td>{{ $mhs->id_user }}</td>
-                            <td>{{ $mhs->nama_user }}</td>
-                            <td>{{ $mhs->email_user }}</td>
-                            <td>{{ $mhs->nmrtlp }}</td>
+                            <td>{{ $mt->id_matkul }}</td>
+                            <td>{{ $mt->nama_matkul }}</td>
                             <td>
-                                @if ($mhs->role_user == 0)
-                                    <p>Mahasiswa</p>
-                                @else
-                                    <p>Dosen</p>
-                                @endif
-                            </td>
-                            <td>
-                                @if ($mhs->id_jurusan == 11)
+                                @if ($mt->id_jurusan == 11)
                                     <p>Informatika</p>
-                                @elseif($mhs->id_jurusan == 17)
+                                @elseif($mt->id_jurusan == 17)
                                     <p>Desain Komunikasi Visual</p>
-                                @elseif($mhs->id_jurusan == 18)
+                                @elseif($mt->id_jurusan == 18)
                                     <p>Sistem Informasi Bisnis</p>
                                 @endif
                             </td>
-                            <td>{{ $mhs->user_username }}</td>
+                            <td>{{ $mt->sks_matkul }}</td>
+                            <td>{{ $mt->sms_matkul }}</td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -126,33 +101,11 @@
             rows.sort((rowA, rowB) => rowA.cells[1].innerText < rowB.cells[1].innerText ? 1 : -1);
             table.tBodies[0].append(...rows);
         });
-        document.querySelector('#showMahasiswa').addEventListener('click', function() {
-            let table = document.querySelector('.table');
-            let rows = Array.from(table.rows).slice(1);
-            rows.forEach(row => {
-                if (row.cells[4].innerText.trim() !== 'Mahasiswa') {
-                    row.style.display = 'none';
-                } else {
-                    row.style.display = '';
-                }
-            });
-        });
-        document.querySelector('#showDosen').addEventListener('click', function() {
-            let table = document.querySelector('.table');
-            let rows = Array.from(table.rows).slice(1);
-            rows.forEach(row => {
-                if (row.cells[4].innerText.trim() !== 'Dosen') {
-                    row.style.display = 'none';
-                } else {
-                    row.style.display = '';
-                }
-            });
-        });
         document.querySelector('#showInformatika').addEventListener('click', function() {
             let table = document.querySelector('.table');
             let rows = Array.from(table.rows).slice(1);
             rows.forEach(row => {
-                if (row.cells[5].innerText.trim() !== 'Informatika') {
+                if (row.cells[2].innerText.trim() !== 'Informatika') {
                     row.style.display = 'none';
                 } else {
                     row.style.display = '';
@@ -163,7 +116,7 @@
             let table = document.querySelector('.table');
             let rows = Array.from(table.rows).slice(1);
             rows.forEach(row => {
-                if (row.cells[5].innerText.trim() !== 'Desain Komunikasi Visual') {
+                if (row.cells[2].innerText.trim() !== 'Desain Komunikasi Visual') {
                     row.style.display = 'none';
                 } else {
                     row.style.display = '';
@@ -174,7 +127,7 @@
             let table = document.querySelector('.table');
             let rows = Array.from(table.rows).slice(1);
             rows.forEach(row => {
-                if (row.cells[5].innerText.trim() !== 'Sistem Informasi Bisnis') {
+                if (row.cells[2].innerText.trim() !== 'Sistem Informasi Bisnis') {
                     row.style.display = 'none';
                 } else {
                     row.style.display = '';
