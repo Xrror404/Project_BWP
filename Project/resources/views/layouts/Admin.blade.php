@@ -309,7 +309,9 @@
                                             height="50vh"> <span>Beranda</span>
                                     </button>
                                     <button class="text-black h4" onclick="redirectTolistUser()">
-                                        <span>ListUser</span>
+                                        <img src="{{ Asset('Assets/listuser.jpg') }}" alt="" width="50vw"
+                                            height="50vh">
+                                        < <span>ListUser</span>
                                     </button>
                                     <button class="text-black h4" onclick="pengaturan('info8', event)">
                                         <img src="{{ Asset('Assets/pengaturan.jpg') }}" alt="" width="50vw"
