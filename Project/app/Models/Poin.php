@@ -8,15 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Poin extends Model
 {
     use HasFactory;
-
-    protected $connection = "KoneksiDatabase";
     protected $table = 'poins';
     protected $primaryKey = 'id_acara';
     public $incrementing = false;
     public $timestamps = true;
-
-    public function Orang()
+    public function penerima_poin()
     {
-        return $this->belongstoMany(User::class, 'penerima_poin', 'id_acara', 'id_penerima');
+        return $this->hasMany('App\Models\PenerimaPoin', 'id_acara');
     }
 }

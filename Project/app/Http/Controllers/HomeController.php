@@ -22,7 +22,6 @@ class HomeController extends Controller
     }
     public function RedirectTo(Request $request)
     {
-        // Fetch announcements using Eloquent model
         $announcements = $this->getAnnouncements();
         $ImportantFile=$this->getImportantFile();
         return response()->view('home', [

@@ -1,18 +1,5 @@
 @extends('layouts.SIM')
 
-{{-- @section('header')
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <img src="../Assets/logoistts.png" alt="" style="height: 2vw; height: 2vw">
-            <h1>Sistem Informasi Mahasiswa</h1>
-        </header>
-    </div>
-@endsection --}}
-
-{{-- @section('sidebar')
-
-@endsection --}}
 
 @section('content')
     {{-- <div class="container"> --}}

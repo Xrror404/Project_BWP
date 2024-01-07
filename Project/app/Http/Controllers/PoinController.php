@@ -6,17 +6,16 @@ use Illuminate\Http\Request;
 use App\Models\Poin;
 use App\Models\PenerimaPoin;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 
 class PoinController extends Controller
 {
     public function index(Request $request)
     {
-        // $poinAll = Poin::all()->first();
-        // yang seharusnya seperti yang atas ^ bukan yang V
-        $poinAll = Poin::all();
-        // dd($poin->Orang);
-        $user = User::find('MHSINF0003');
-        // Adjust the view name to 'Point'
-        return view('point', compact('poinAll', 'user'));
+
+        $user_username = Auth::user()->id_user;
+        $poin_user = PenerimaPoin::with('poins')->where('id_penerima', $user_username)->get();
+        return view('point', compact('poin_user'));
     }
 }

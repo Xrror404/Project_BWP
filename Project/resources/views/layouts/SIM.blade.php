@@ -254,9 +254,9 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title">{{ $namaMhs }}</h5>
+                                <h5 class="card-title">{{ Auth::user()->nama_user }}</h5>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <p class="card-text">{{ $nrpMhs }}</p>
+                                    <p class="card-text">{{ Auth::user()->user_username }}</p>
                                     <div class="dropdown">
                                         <span style="cursor: pointer;" id="dropdownMenuButton" data-toggle="dropdown"
                                             aria-haspopup="true" aria-expanded="false">
