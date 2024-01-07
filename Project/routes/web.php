@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\adminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\informasiMata;
 use App\Http\Controllers\JadwalController;
@@ -31,6 +32,7 @@ Route::get('/logout', [HomeController::class, 'logout'])->name('logout');
 Route::group(['middleware' => 'web'], function ()  {
     Route::get('/Home', [HomeController::class, 'RedirectTo'])->name('home');
     Route::get('/point', [PoinController::class, 'index'])->name('point');
+    Route::get('/point', [adminController::class, 'RedirectTo'])->name('admin');
 
     Route::get('/info', function () {
         return view('info');
