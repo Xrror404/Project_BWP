@@ -91,6 +91,9 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('pengaturan-Dosen', function () {
         return view('pengaturandosen');
     })->name('pengaturandosen');
+    Route::get('Laporan-keuangan-mahasiswa', function () {
+        return view('luangmahasiswa');
+    })->name('luangmahasiswa');
 
     Route::get('/kotak_dosen', [UserController::class, 'showUsersWithRoleOne'])->name('kdosen');
 

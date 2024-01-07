@@ -331,7 +331,10 @@
                                         <img src="{{ Asset('Assets/pengaturan.jpg') }}" alt="" width="50vw"
                                             height="50vh"><span>Pengaturan</span>
                                     </button>
-
+                                    <button class="text-black h4" onclick="luang('info6', event)"><img
+                                            src="{{ Asset('Assets/uang.jpg') }}" alt="" width="50vw"
+                                            height="50vh"><span>Laporan Keuangan mahasiswa</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -423,6 +426,10 @@
 
     function pengaturan() {
         window.location.href = '{{ route('pengaturandosen') }}';
+    }
+
+    function luang() {
+        window.location.href = '{{ route('luangmahasiswa') }}';
     }
 
     function redirectToBiodata() {
