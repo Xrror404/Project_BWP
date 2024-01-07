@@ -120,9 +120,13 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('mahasiswa', function () {
         return view('mahasiswa');
     })->name('mahasiswa');
-    Route::get('TambahMhs', function () {
-        return view('tambahmhs');
-    })->name('tambahmhs');
+
+    // Display the form
+    Route::get('/TambahMhs', [UserController::class, 'create'])->name('tambahmhs');
+
+    // Handle the form submission
+    Route::post('/TambahMhs', [UserController::class, 'store'])->name('storemhs');
+
     Route::get('Tambah-Matkul', function () {
         return view('matkul');
     })->name('matkul');
