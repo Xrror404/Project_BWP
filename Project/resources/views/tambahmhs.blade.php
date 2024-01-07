@@ -22,7 +22,6 @@
             <h5 class="card-title">Tambahkan Mahasiswa Baru</h5>
             <form action="{{ url('/TambahMhs') }}" method="POST">
                 @csrf
-                <input type="text" name="id_user" placeholder="User ID" required><br>
                 <input type="text" name="id_jurusan" placeholder="Jurusan ID"><br>
                 <input type="text" name="nama_user" placeholder="Name" required><br>
                 <input type="email" name="email_user" placeholder="Email" required><br>
