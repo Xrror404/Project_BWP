@@ -279,8 +279,8 @@
                                         </span>
                                         <div class="dropdown-menu bg-light dropdown-menu-right"
                                             aria-labelledby="dropdownMenuButton" id="DropDownButton">
-                                                <button class="dropdown-item" type="button"
-                                                    onclick="logoutMethod()">Logout</button>
+                                            <button class="dropdown-item" type="button"
+                                                onclick="logoutMethod()">Logout</button>
                                         </div>
                                     </div>
 
@@ -308,9 +308,13 @@
                                             height="50vh"> <span>Beranda</span>
                                     </button>
                                     <button class="text-black h4" onclick="redirectTolistUser()">
+                                        <img src="{{ Asset('Assets/listuser.jpg') }}" alt="" width="50vw"
+                                            height="50vh">
                                         <span>List User</span>
                                     </button>
                                     <button class="text-black h4" onclick="redirectTolistMatkul()">
+                                        <img src="{{ Asset('Assets/listmatkul.jpg') }}" alt="" width="50vw"
+                                            height="50vh">
                                         <span>List Mata Kuliah</span>
                                     </button>
                                     <button class="text-black h4" onclick="pengaturan('info8', event)">
@@ -409,6 +413,7 @@
     function redirectTolistUser() {
         window.location.href = '{{ route('listUser') }}';
     }
+
     function redirectTolistMatkul() {
         window.location.href = '{{ route('listMatkul') }}';
     }
