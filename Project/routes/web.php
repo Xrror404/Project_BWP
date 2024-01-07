@@ -29,14 +29,15 @@ Route::prefix('/Login')->group(function () {
 });
 Route::get('/logout', [HomeController::class, 'logout'])->name('logout');
 
-Route::group(['middleware' => 'web'], function ()  {
+Route::group(['middleware' => 'web'], function () {
     Route::get('/Home', [HomeController::class, 'RedirectTo'])->name('home');
     Route::get('/point', [PoinController::class, 'index'])->name('point');
-    Route::get('/point', [adminController::class, 'RedirectTo'])->name('admin');
+    Route::get('/admin', [adminController::class, 'RedirectTo'])->name('admin');
 
     Route::get('/info', function () {
         return view('info');
     })->name('info');
+
     Route::get('/laporan nilai', function () {
         return view('laporan');
     })->name('laporan');
@@ -78,6 +79,18 @@ Route::group(['middleware' => 'web'], function ()  {
     Route::get('/Pengisian/ecc', function () {
         return view('pengisianecc');
     })->name('pengisianecc');
+    Route::get('Info-Dosen', function () {
+        return view('infodosen');
+    })->name('infodosen');
+    Route::get('Jadwal-Ujian', function () {
+        return view('jujiandosen');
+    })->name('jujiandosen');
+    Route::get('Jadwal-Kuliah', function () {
+        return view('jkuliahdosen');
+    })->name('jkuliahdosen');
+    Route::get('pengaturan-Dosen', function () {
+        return view('pengaturandosen');
+    })->name('pengaturandosen');
 
     Route::get('/kotak_dosen', [UserController::class, 'showUsersWithRoleOne'])->name('kdosen');
 
@@ -90,5 +103,11 @@ Route::group(['middleware' => 'web'], function ()  {
     })->name('pengaturan');
     Route::get('/biodata', function () {
         return view('biodata');
+    });
+    Route::get('/biodata-dosen', function () {
+        return view('biodatadosen');
+    });
+    Route::get('/homedosen', function () {
+        return view('admin');
     });
 });
