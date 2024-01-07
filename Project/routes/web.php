@@ -103,13 +103,27 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('Laporan-keuangan-mahasiswa', function () {
         return view('luangmahasiswa');
     })->name('luangmahasiswa');
+    Route::get('BioData-dosen', function () {
+        return view('biodatadosen');
+    })->name('biodatadosen');
     Route::get('Dosen', function () {
         return view('Dosen');
     })->name('Dosen');
     Route::get('Peraturan-Admin', function () {
         return view('pAdmin');
     })->name('pAdmin');
-
+    Route::get('matkul', function () {
+        return view('matkul');
+    })->name('matkul');
+    Route::get('mahasiswa', function () {
+        return view('mahasiswa');
+    })->name('mahasiswa');
+    Route::get('TambahMhs', function () {
+        return view('tambahmhs');
+    })->name('tambahmhs');
+    Route::get('Tambah-Matkul', function () {
+        return view('matkul');
+    })->name('matkul');
 
 
     Route::get('/kotak_dosen', [UserController::class, 'showUsersWithRoleOne'])->name('kdosen');
