@@ -8,64 +8,71 @@
                     <h1 class="text-light">Filter:</h1>
                 </div>
             </div>
-            <div class="col-md-1 m-2">
-                <div class="container m-2"style="width:max-content;">
-                    <button class="btn btn-primary" onclick="location.reload();">
-                        <h4>All User</h4>
-                    </button>
+            <div class="row">
+                <div class="col-md-1 m-2 d-flex justify-content-center" style="width:15%;">
+                    <div class="container m-2" style="width:100%;">
+                        <button class="btn btn-primary" onclick="location.reload();">
+                            <h4>All User</h4>
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-1 m-2">
-                <div class="container m-2">
-                    <div class="dropdown">
-                        <span class= "btn btn-danger"style="cursor: pointer;" id="dropdownMenuButton" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <h3>Nama</h3>
-                        </span>
-                        <div class="dropdown-menu bg-light dropdown-menu-right" aria-labelledby="dropdownMenuButton"
-                            id="DropDownButton">
-                            <button class="dropdown-item" type="button" id="sortAscending">Ascending</button>
-                            <button class="dropdown-item" type="button" id="sortDescending">Descending</button>
+
+                <div class="col-md-1 m-2 d-flex justify-content-center">
+                    <div class="container m-2">
+                        <div class="dropdown">
+                            <span class="btn btn-danger" style="cursor: pointer;" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <h3>Nama</h3>
+                            </span>
+                            <div class="dropdown-menu bg-light dropdown-menu-right" aria-labelledby="dropdownMenuButton"
+                                id="DropDownButton">
+                                <button class="dropdown-item" type="button" id="sortAscending">Ascending</button>
+                                <button class="dropdown-item" type="button" id="sortDescending">Descending</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-1 m-2">
-                <div class="container m-2">
-                    <div class="dropdown">
-                        <span class= "btn btn-danger"style="cursor: pointer;" id="dropdownMenuButton" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <h3>Role</h3>
-                        </span>
-                        <div class="dropdown-menu bg-light dropdown-menu-right" aria-labelledby="dropdownMenuButton"
-                            id="DropDownButton">
-                            <button class="dropdown-item" type="button" id="showMahasiswa">Mahasiswa</button>
-                            <button class="dropdown-item" type="button" id="showDosen">Dosen</button>
+                <div class="col-md-1 m-2">
+                    <div class="container m-2">
+                        <div class="dropdown">
+                            <span class= "btn btn-danger"style="cursor: pointer;" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <h3>Role</h3>
+                            </span>
+                            <div class="dropdown-menu bg-light dropdown-menu-right" aria-labelledby="dropdownMenuButton"
+                                id="DropDownButton">
+                                <button class="dropdown-item" type="button" id="showMahasiswa">Mahasiswa</button>
+                                <button class="dropdown-item" type="button" id="showDosen">Dosen</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 m-2">
-                <div class="container m-2">
-                    <div class="dropdown">
-                        <span class= "btn btn-danger"style="cursor: pointer;" id="dropdownMenuButton" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <h3>Jurusan</h3>
-                        </span>
-                        <div class="dropdown-menu bg-light dropdown-menu-right" aria-labelledby="dropdownMenuButton"
-                            id="DropDownButton">
-                            <button class="dropdown-item" type="button" id="showInformatika">Informatika</button>
-                            <button class="dropdown-item" type="button" id="showDKV">Desain Komunikasi Visual</button>
-                            <button class="dropdown-item" type="button" id="showSIB">Sistem Informasi Bisnis</button>
+                <div class="col-md-4 m-2">
+                    <div class="container m-2">
+                        <div class="dropdown">
+                            <span class= "btn btn-danger"style="cursor: pointer;" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <h3>Jurusan</h3>
+                            </span>
+                            <div class="dropdown-menu bg-light dropdown-menu-right" aria-labelledby="dropdownMenuButton"
+                                id="DropDownButton">
+                                <button class="dropdown-item" type="button" id="showInformatika">Informatika</button>
+                                <button class="dropdown-item" type="button" id="showDKV">Desain Komunikasi
+                                    Visual</button>
+                                <button class="dropdown-item" type="button" id="showSIB">Sistem Informasi Bisnis</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3 m-2">
-                <div class="container m-4">
-                    <input type="text" id="searchBar" placeholder="Cari nama user...">
+                <div class="col-md-3 m-2">
+                    <div class="container m-4">
+                        <input type="text" id="searchBar" placeholder="Cari nama user...">
+                    </div>
                 </div>
             </div>
+
+
+
         </div>
 
         <div class="container">
