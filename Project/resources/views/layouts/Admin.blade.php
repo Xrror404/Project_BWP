@@ -266,15 +266,12 @@
                         @endphp
 
                         <div class="card" style="width: auto; padding:0vh 0vw; margin:0vh 0vw;"id="UserCard">
-                            <div class="container p-3">
-                                <div
-                                    class="card rounded-circle bg-secondary"style="width:4vw;height:8vh;cursor:pointer;">
-                                </div>
-                            </div>
                             <div class="card-body">
-                                <h5 class="card-title">{{ Auth::user()->nama_user }}</h5>
+                                <div class="container text-center">
+                                    <h1>ADMIN</h1>
+                                </div>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <p class="card-text">{{ Auth::user()->user_username }}</p>
+                                    <p class="card-text"></p>
                                     <div class="dropdown">
                                         <span style="cursor: pointer;" id="dropdownMenuButton" data-toggle="dropdown"
                                             aria-haspopup="true" aria-expanded="false">
@@ -282,9 +279,9 @@
                                         </span>
                                         <div class="dropdown-menu bg-light dropdown-menu-right"
                                             aria-labelledby="dropdownMenuButton" id="DropDownButton">
-
-                                            <button class="dropdown-item" type="button"
-                                                onclick="logoutMethod()">Logout</button>
+                                            <<<<<<< HEAD=======>>>>>>> 3e921ca3f076af3096e04756cc218aae877becfe
+                                                <button class="dropdown-item" type="button"
+                                                    onclick="logoutMethod()">Logout</button>
                                         </div>
                                     </div>
 
@@ -311,7 +308,9 @@
                                         <img src="{{ Asset('Assets/home.jpg') }}" alt="" width="50vw"
                                             height="50vh"> <span>Beranda</span>
                                     </button>
-
+                                    <button class="text-black h4" onclick="redirectTolistUser()">
+                                        <span>ListUser</span>
+                                    </button>
                                     <button class="text-black h4" onclick="pengaturan('info8', event)">
                                         <img src="{{ Asset('Assets/pengaturan.jpg') }}" alt="" width="50vw"
                                             height="50vh"><span>Pengaturan</span>
@@ -403,6 +402,9 @@
         window.location.href = '{{ route('admin') }}';
     }
 
+    function redirectTolistUser() {
+        window.location.href = '{{ route('listUser') }}';
+    }
 
     function redirectToInfo() {
         window.location.href = '{{ route('infodosen') }}';
