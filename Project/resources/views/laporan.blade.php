@@ -16,9 +16,8 @@
 
 
 @section('content')
-    {{-- <div class="container"> --}}
     <!-- Display student data if available -->
-    <div class="card">
+    {{-- <div class="card">
         <div class="card-body">
             <div class="row">
                 <div class="col-md-6">
@@ -30,5 +29,33 @@
                 </div>
             </div>
         </div>
+    </div> --}}
+
+    <div class="container">
+        <h1>Your Nilai</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nama Matkul</th>
+                    <th>Nilai UTS</th>
+                    <th>Nilai UAS</th>
+                    <th>Nilai Akhir</th>
+                </tr>
+            </thead>
+            <tbody>
+                @forelse ($nilai as $item)
+                    <tr>
+                        <td>{{ $item->matkul->nama_matkul }}</td>
+                        <td>{{ $item->nilai_uts }}</td>
+                        <td>{{ $item->nilai_uas }}</td>
+                        <td>{{ $item->nilai_akhir }}</td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="4">No records found</td>
+                    </tr>
+                @endforelse
+            </tbody>
+        </table>
     </div>
 @endsection

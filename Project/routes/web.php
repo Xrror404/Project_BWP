@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\informasiMata;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Nilai;
 use App\Http\Controllers\PoinController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -41,13 +42,17 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/laporan nilai', function () {
         return view('laporan');
     })->name('laporan');
+
     Route::get('/info', [informasiMata::class, 'getMatkulandredirect'])->name('info');
-    Route::get('/laporan', function () {
-        return view('laporan');
-    })->name('laporan');
+
+
+    Route::get('/laporan', [Nilai::class, 'showNilai'])->name('laporan')->middleware('auth');
+
     Route::get('/transkip', function () {
         return view('transkip');
     })->name('transkip');
+
+
     Route::get('/grafik', function () {
         return view('grafik');
     })->name('grafik');

@@ -19,6 +19,7 @@ class User extends Authenticatable
      */
     protected $connection = "KoneksiDatabase";
     protected $table = 'user';
+    protected $primaryKey = 'id_user';
     public $incrementing = false;
     public $timestamps = false;
     // protected $fillable = [
@@ -50,7 +51,6 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    protected $primaryKey = 'id_user';
     /**
      * The attributes that should be cast.
      *
@@ -64,5 +64,15 @@ class User extends Authenticatable
     public function Poins()
     {
         return $this->belongsToMany(Poin::class, 'penerima_poin', 'id_penerima', 'id_acara');
+    }
+
+    public function jurusan()
+    {
+        return $this->belongsTo(Jurusan::class, 'id_jurusan');
+    }
+
+    public function nilai()
+    {
+        return $this->hasMany(Nilai::class, 'id_user');
     }
 }
