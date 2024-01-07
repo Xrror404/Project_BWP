@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\informasiMata;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Nilai;
 use App\Http\Controllers\PoinController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -29,24 +30,30 @@ Route::prefix('/Login')->group(function () {
 });
 Route::get('/logout', [HomeController::class, 'logout'])->name('logout');
 
-Route::group(['middleware' => 'web'], function ()  {
+Route::group(['middleware' => 'web'], function () {
     Route::get('/Home', [HomeController::class, 'RedirectTo'])->name('home');
     Route::get('/point', [PoinController::class, 'index'])->name('point');
     Route::get('/admin', [adminController::class, 'RedirectTo'])->name('admin');
 
+
     Route::get('/info', function () {
         return view('info');
     })->name('info');
+
     Route::get('/laporan nilai', function () {
         return view('laporan');
     })->name('laporan');
+
     Route::get('/info', [informasiMata::class, 'getMatkulandredirect'])->name('info');
-    Route::get('/laporan', function () {
-        return view('laporan');
-    })->name('laporan');
+
+
+    Route::get('/laporan', [Nilai::class, 'showNilai'])->name('laporan')->middleware('auth');
+
     Route::get('/transkip', function () {
         return view('transkip');
     })->name('transkip');
+
+
     Route::get('/grafik', function () {
         return view('grafik');
     })->name('grafik');
@@ -78,6 +85,29 @@ Route::group(['middleware' => 'web'], function ()  {
     Route::get('/Pengisian/ecc', function () {
         return view('pengisianecc');
     })->name('pengisianecc');
+    Route::get('Info-Dosen', function () {
+        return view('infodosen');
+    })->name('infodosen');
+    Route::get('Jadwal-Ujian', function () {
+        return view('jujiandosen');
+    })->name('jujiandosen');
+    Route::get('Jadwal-Kuliah', function () {
+        return view('jkuliahdosen');
+    })->name('jkuliahdosen');
+    Route::get('pengaturan-Dosen', function () {
+        return view('pengaturandosen');
+    })->name('pengaturandosen');
+    Route::get('Laporan-keuangan-mahasiswa', function () {
+        return view('luangmahasiswa');
+    })->name('luangmahasiswa');
+    Route::get('Dosen', function () {
+        return view('Dosen');
+    })->name('Dosen');
+    Route::get('Peraturan-Admin', function () {
+        return view('pAdmin');
+    })->name('pAdmin');
+
+
 
     Route::get('/kotak_dosen', [UserController::class, 'showUsersWithRoleOne'])->name('kdosen');
 
@@ -90,5 +120,11 @@ Route::group(['middleware' => 'web'], function ()  {
     })->name('pengaturan');
     Route::get('/biodata', function () {
         return view('biodata');
+    });
+    Route::get('/biodata-dosen', function () {
+        return view('biodatadosen');
+    });
+    Route::get('/homedosen', function () {
+        return view('admin');
     });
 });

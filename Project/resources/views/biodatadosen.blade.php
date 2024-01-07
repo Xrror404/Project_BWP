@@ -1,4 +1,4 @@
-@extends('layouts.SIM')
+@extends('layouts.Dosen')
 
 {{-- @section('header')
     <div class="container">
@@ -75,7 +75,7 @@
                         <h3>Status nikah:</h3>
                     </div>
 
-                    <div class="col-md-6 text-right"style="background-color: yellow">
+                    <div class="col-md-6 text-right" style="background-color: yellow">
                         <h1 style="color: white">Status akademis:</h1>
                         <h1 style="color: white">Dosen wali:</h1>
                         <h2>Major:</h2>
