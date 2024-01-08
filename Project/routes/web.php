@@ -33,8 +33,8 @@ Route::prefix('/Login')->group(function () {
 });
 Route::get('/logout', [HomeController::class, 'logout'])->name('logout');
 
-Route::group(['middleware' => 'web'], function () {
-    Route::get('/Home', [HomeController::class, 'RedirectTo'])->name('home');
+Route::middleware('auth')->group(function () {
+    Route::get('/home', [HomeController::class, 'RedirectTo'])->name('home');
     Route::get('/point', [PoinController::class, 'index'])->name('point');
     Route::get('/admin', [adminController::class, 'RedirectTo'])->name('admin');
     Route::get('/listUser', [listUserControler::class, 'RedirectTo'])->name('listUser');
