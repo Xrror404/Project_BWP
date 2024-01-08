@@ -40,6 +40,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/listUser', [listUserControler::class, 'RedirectTo'])->name('listUser');
     Route::get('/listMatkul', [listMatkulController::class, 'RedirectTo'])->name('listMatkul');
     Route::get('/listUser/search', [listUserControler::class, 'search'])->name('listUser.search');
+    Route::get('/listUser/all', [listUserControler::class, 'getAllUsers'])->name('listUser.all');
 
 
     Route::get('/info', function () {

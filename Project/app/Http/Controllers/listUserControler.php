@@ -19,4 +19,9 @@ class listUserControler extends Controller
 
         return response()->json($results);
     }
+    public function getAllUsers()
+    {
+        $users = Mahasiswa::all();
+        return response()->json($users);
+    }
 }
