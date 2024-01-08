@@ -39,6 +39,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/admin', [adminController::class, 'RedirectTo'])->name('admin');
     Route::get('/listUser', [listUserControler::class, 'RedirectTo'])->name('listUser');
     Route::get('/listMatkul', [listMatkulController::class, 'RedirectTo'])->name('listMatkul');
+    Route::get('/listUser/search', [listUserControler::class, 'search'])->name('listUser.search');
 
 
     Route::get('/info', function () {

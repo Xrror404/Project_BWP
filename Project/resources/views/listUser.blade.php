@@ -70,11 +70,7 @@
                     </div>
                 </div>
             </div>
-
-
-
         </div>
-
         <div class="container">
             <table class="table table-striped">
                 <thead>
@@ -88,7 +84,7 @@
                         <th>Username User</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="userTable">
                     @foreach ($mahasiswa as $mhs)
                         <tr>
                             <td>{{ $mhs->id_user }}</td>
@@ -188,19 +184,67 @@
                 }
             });
         });
-        document.querySelector('#searchBar').addEventListener('keyup', function(e) {
-            let searchValue = e.target.value.toLowerCase();
-            let table = document.querySelector('.table');
-            let rows = Array.from(table.rows).slice(1);
-            rows.forEach(row => {
-                let namaUser = row.cells[1].innerText
-                    .toLowerCase();
-                if (namaUser.includes(searchValue)) {
-                    row.style.display = '';
+        $(document).ready(function() {
+            // Fungsi untuk memperbarui data
+            function updateData() {
+                // Ambil nilai pencarian
+                let searchValue = $('#searchBar').val();
+
+                // Jika pencarian tidak kosong, lakukan permintaan AJAX
+                if (searchValue.trim() !== '') {
+                    $.ajax({
+                        url: '{{ route('listUser.search') }}',
+                        method: 'GET',
+                        data: {
+                            query: searchValue
+                        },
+                        success: function(data) {
+                            let tableBody = document.querySelector('#userTable');
+                            tableBody.innerHTML = '';
+                            data.forEach(user => {
+                                let row = tableBody.insertRow();
+                                row.insertCell().innerText = user.id_user;
+                                row.insertCell().innerText = user.nama_user;
+                                row.insertCell().innerText = user.email_user;
+                                row.insertCell().innerText = user.nmrtlp;
+                                row.insertCell().innerText = user.role_user == 0 ? 'Mahasiswa' : 'Dosen';
+                                row.insertCell().innerText = getJurusan(user.id_jurusan);
+                                row.insertCell().innerText = user.user_username;
+                            });
+                        }
+                    });
                 } else {
-                    row.style.display = 'none';
+                    // Jika pencarian kosong, tampilkan semua data
+                    let table = document.querySelector('.table');
+                    let rows = Array.from(table.rows).slice(1);
+                    rows.forEach(row => {
+                        row.style.display = '';
+                    });
                 }
+            }
+
+            // Panggil fungsi pembaruan data setiap detik
+            setInterval(updateData, 1000);
+
+            // Handle event saat pengguna mengetik di dalam kolom pencarian
+            document.querySelector('#searchBar').addEventListener('keyup', function() {
+                // Memanggil fungsi pembaruan data saat pengguna mengetik
+                updateData();
             });
         });
+
+
+        function getJurusan(id) {
+            switch (id) {
+                case 11:
+                    return 'Informatika';
+                case 17:
+                    return 'Desain Komunikasi Visual';
+                case 18:
+                    return 'Sistem Informasi Bisnis';
+                default:
+                    return '';
+            }
+        }
     </script>
 @endsection

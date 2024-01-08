@@ -12,4 +12,11 @@ class listUserControler extends Controller
         $mahasiswa = Mahasiswa::all();
         return view('listUser', ['mahasiswa' => $mahasiswa]);
     }
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+        $results = Mahasiswa::where('nama_user', 'like', '%' . $query . '%')->get();
+
+        return response()->json($results);
+    }
 }
