@@ -58,7 +58,6 @@
             </div>
         </div>
     </div>
-    <a href="{{ route('Dosen') }}"><button>ke dosen </button></a>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var fileLinks = document.querySelectorAll('.file-link');

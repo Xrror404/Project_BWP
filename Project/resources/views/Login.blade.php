@@ -74,7 +74,7 @@
         <nav class="navbar">
             <div class="container align-items-center">
                 <img id="logoImg" class="pl-5 pt-2 logo-img" style="height: 7em; width: 7em;"
-                    src="../Assets/logoistts.png" alt="" srcset="">
+                    src="{{ asset('Assets/LogoISTTS.png') }}" alt="" srcset="">
             </div>
         </nav>
     </header>
