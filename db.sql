@@ -137,7 +137,8 @@ VALUES
     ('DSNDKV0006', 17, 'Mia Wright, S.Des., M.Des.', 'mia@stts.edu', '087654321100', 1, 'mia', '$2y$12$SrnkHQp5oHG5RSE6PlWWzOAjaSSOoU6WJ1yh.fGlDfS2LFuZ9lxpS', '2022-06-30'),
     ('DSNDKV0007', 17, 'Lily Cooper, S. Des., M. Des.', 'lily@stts.edu', '081234567894', 1, 'lily', '$2y$12$SrnkHQp5oHG5RSE6PlWWzOAjaSSOoU6WJ1yh.fGlDfS2LFuZ9lxpS', '2018-06-30'),
     ('DSNDKV0008', 17, 'Samuel Morgan, S. Des., M. Des.', 'samuel@stts.edu', '085678901238', 1, 'samuel', '$2y$12$SrnkHQp5oHG5RSE6PlWWzOAjaSSOoU6WJ1yh.fGlDfS2LFuZ9lxpS', '2019-06-30'),
-    ('DSNDKV0009', 17, 'Victoria Hayes, S. Des., M. Des.', 'victoria@stts.edu', '087654321102', 1, 'victoria', '$2y$12$SrnkHQp5oHG5RSE6PlWWzOAjaSSOoU6WJ1yh.fGlDfS2LFuZ9lxpS', '2016-06-30');
+    ('DSNDKV0009', 17, 'Victoria Hayes, S. Des., M. Des.', 'victoria@stts.edu', '087654321102', 1, 'victoria', '$2y$12$SrnkHQp5oHG5RSE6PlWWzOAjaSSOoU6WJ1yh.fGlDfS2LFuZ9lxpS', '2016-06-30'),
+    ('ADMINADMIN', 15, 'Admin', 'admin@admin.admin', '123456789012', 2, 'admin', "$2y$12$6t20IW9RFHPco4REhMdVPetdBDB2FFL19MGvEua41sbrvZZQufZQO", '1978-06-30');
 
 INSERT INTO matkul (id_matkul, nama_matkul, id_jurusan, sks_matkul, sms_matkul)
 VALUES
