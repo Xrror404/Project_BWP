@@ -89,7 +89,8 @@ INSERT INTO jurusan (id_jurusan, nama_jurusan)
 VALUES
     (11, 'Informatika'),
     (17, 'Desain Komunikasi Visual'),
-    (18, 'Sistem Informasi Bisnis');
+    (18, 'Sistem Informasi Bisnis'),
+    (20, 'Admin');
 
 INSERT INTO user (id_user, id_jurusan, nama_user, email_user, nmrtlp, role_user, user_username, user_password, user_added_date)
 VALUES 
@@ -138,7 +139,7 @@ VALUES
     ('DSNDKV0007', 17, 'Lily Cooper, S. Des., M. Des.', 'lily@stts.edu', '081234567894', 1, 'lily', '$2y$12$SrnkHQp5oHG5RSE6PlWWzOAjaSSOoU6WJ1yh.fGlDfS2LFuZ9lxpS', '2018-06-30'),
     ('DSNDKV0008', 17, 'Samuel Morgan, S. Des., M. Des.', 'samuel@stts.edu', '085678901238', 1, 'samuel', '$2y$12$SrnkHQp5oHG5RSE6PlWWzOAjaSSOoU6WJ1yh.fGlDfS2LFuZ9lxpS', '2019-06-30'),
     ('DSNDKV0009', 17, 'Victoria Hayes, S. Des., M. Des.', 'victoria@stts.edu', '087654321102', 1, 'victoria', '$2y$12$SrnkHQp5oHG5RSE6PlWWzOAjaSSOoU6WJ1yh.fGlDfS2LFuZ9lxpS', '2016-06-30'),
-    ('ADMINADMIN', 15, 'Admin', 'admin@admin.admin', '123456789012', 2, 'admin', "$2y$12$6t20IW9RFHPco4REhMdVPetdBDB2FFL19MGvEua41sbrvZZQufZQO", '1978-06-30');
+    ('ADMINADMIN', 20, 'Admin', 'admin@admin.admin', '123456789012', 2, 'admin', "$2y$12$6t20IW9RFHPco4REhMdVPetdBDB2FFL19MGvEua41sbrvZZQufZQO", '1978-06-30');
 
 INSERT INTO matkul (id_matkul, nama_matkul, id_jurusan, sks_matkul, sms_matkul)
 VALUES

@@ -64,11 +64,13 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-3 m-2">
                     <div class="container m-4">
                         <input type="text" id="searchBar" placeholder="Cari nama user...">
                     </div>
                 </div>
+
             </div>
         </div>
         <div class="container">
@@ -185,13 +187,9 @@
             });
         });
         $(document).ready(function() {
-            // Fungsi untuk memperbarui data
             function updateData() {
-                // Ambil nilai pencarian
-                let searchValue = $('#searchBar').val();
-
-                // Jika pencarian tidak kosong, lakukan permintaan AJAX
-                if (searchValue.trim() !== '') {
+                let searchValue = $('#searchBar').val().trim();
+                if (searchValue !== '') {
                     $.ajax({
                         url: '{{ route('listUser.search') }}',
                         method: 'GET',
@@ -199,39 +197,44 @@
                             query: searchValue
                         },
                         success: function(data) {
-                            let tableBody = document.querySelector('#userTable');
-                            tableBody.innerHTML = '';
-                            data.forEach(user => {
-                                let row = tableBody.insertRow();
-                                row.insertCell().innerText = user.id_user;
-                                row.insertCell().innerText = user.nama_user;
-                                row.insertCell().innerText = user.email_user;
-                                row.insertCell().innerText = user.nmrtlp;
-                                row.insertCell().innerText = user.role_user == 0 ? 'Mahasiswa' : 'Dosen';
-                                row.insertCell().innerText = getJurusan(user.id_jurusan);
-                                row.insertCell().innerText = user.user_username;
-                            });
+                            updateTable(data);
                         }
                     });
                 } else {
-                    // Jika pencarian kosong, tampilkan semua data
-                    let table = document.querySelector('.table');
-                    let rows = Array.from(table.rows).slice(1);
-                    rows.forEach(row => {
-                        row.style.display = '';
-                    });
+                    showAllData();
                 }
             }
 
-            // Panggil fungsi pembaruan data setiap detik
+            function updateTable(data) {
+                let tableBody = $('#userTable');
+                tableBody.empty();
+
+                data.forEach(user => {
+                    let row = $('<tr>');
+                    row.append($('<td>').text(user.id_user));
+                    row.append($('<td>').text(user.nama_user));
+                    row.append($('<td>').text(user.email_user));
+                    row.append($('<td>').text(user.nmrtlp));
+                    row.append($('<td>').text(user.role_user == 0 ? 'Mahasiswa' : 'Dosen'));
+                    row.append($('<td>').text(getJurusan(user.id_jurusan)));
+                    row.append($('<td>').text(user.user_username));
+
+                    tableBody.append(row);
+                });
+            }
+
+            function showAllData() {
+                let table = $('.table tbody tr');
+                table.show();
+            }
+
             setInterval(updateData, 1000);
 
-            // Handle event saat pengguna mengetik di dalam kolom pencarian
-            document.querySelector('#searchBar').addEventListener('keyup', function() {
-                // Memanggil fungsi pembaruan data saat pengguna mengetik
+            $('#searchBar').keyup(function() {
                 updateData();
             });
         });
+
 
 
         function getJurusan(id) {
